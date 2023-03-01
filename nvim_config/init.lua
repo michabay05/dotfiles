@@ -1,3 +1,15 @@
+-- NEOVIDE CONFIG
+if vim.g.neovide then
+    vim.o.guifont = "Iosevka Nerd Font Mono:h12"    
+    vim.g.neovide_scale_factor = 1.0
+    vim.g.neovide_scroll_animation_length = 0.1
+    vim.g.neovide_refresh_rate = 59
+    vim.g.neovide_confirm_quit = true
+    vim.g.neovide_cursor_animation_length = 0
+    
+end
+--------------------------
+
 require("user.packer")
 require("user.core.options")
 require("user.core.keymaps")
