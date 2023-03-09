@@ -11,12 +11,12 @@ local keymap = vim.keymap -- for conciseness
 keymap.set("i", "jk", "<ESC>")
 
 -- clear search highlights
-keymap.set("n", "<leader>nh", ":nohl<CR>")
+keymap.set("n", "<leader>h", ":nohl<CR>")
 
 -- Buffer specific navigation
 keymap.set("n", "H", ":bp<CR>")
 keymap.set("n", "L", ":bn<CR>")
-keymap.set("n", "Q", ":bd<CR>")
+keymap.set("n", "<leader>c", ":bd<CR>")
 
 -- Window Navigation
 keymap.set("n", "<C-h>", "<C-w>h")
@@ -32,7 +32,7 @@ keymap.set("v", ">", ">gv")
 ----------------------
 
 -- nvim-tree
-keymap.set("n", "<leader>ee", ":NvimTreeToggle<CR>") -- toggle file explorer
+keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>") -- toggle file explorer
 
 -- telescope
 keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>") -- find files within current working directory, respects .gitignore

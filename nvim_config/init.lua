@@ -7,6 +7,7 @@ if vim.g.neovide then
 	vim.g.neovide_confirm_quit = true
 	vim.g.neovide_cursor_animation_length = 0
 
+<<<<<<< HEAD
   vim.g.neovide_scale_factor = 1.0
 
   local change_scale_factor = function(delta)
@@ -19,6 +20,19 @@ if vim.g.neovide then
     change_scale_factor(1/1.25)
   end)
 
+=======
+	vim.g.neovide_scale_factor = 1.0
+
+	local change_scale_factor = function(delta)
+		vim.g.neovide_scale_factor = vim.g.neovide_scale_factor * delta
+	end
+	vim.keymap.set("n", "<C-=>", function()
+		change_scale_factor(1.25)
+	end)
+	vim.keymap.set("n", "<C-->", function()
+		change_scale_factor(1 / 1.25)
+	end)
+>>>>>>> 35e131e (Worked on configuring go lsp)
 end
 
 ----------------------------------------
@@ -28,7 +42,7 @@ require("user.core.keymaps")
 require("user.core.colorscheme")
 require("user.plugins.comment")
 require("user.plugins.nvim-tree")
--- require("user.plugins.lualine")
+require("user.plugins.lualine")
 require("user.plugins.telescope")
 require("user.plugins.nvim-cmp")
 require("user.plugins.mason")
