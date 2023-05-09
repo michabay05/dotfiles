@@ -24,15 +24,27 @@ keymap.set("n", "<C-j>", "<C-w>j")
 keymap.set("n", "<C-k>", "<C-w>k")
 keymap.set("n", "<C-l>", "<C-w>l")
 
+-- Keep selected text while indenting and outdenting
 keymap.set("v", "<", "<gv")
 keymap.set("v", ">", ">gv")
+
+-- Copy and paste from system clipboard
+keymap.set({ "n", "v" }, "<leader>y", [["+y]])
+keymap.set("n", "<leader>p", [["*p]])
+keymap.set("n", "<leader>P", [["*P]])
+keymap.set("v", "<leader>r", [["*p]])
+keymap.set("v", "<leader>R", [["*P]])
+
+-- Creating vertical and horizontal split
+keymap.set("n", "<leader>vs", ":vsplit<CR>")
+keymap.set("n", "<leader>hs", ":split<CR>")
+
+-- Closing split screen
+keymap.set("n", "<leader>x", ":quit<CR>")
 
 ----------------------
 -- Plugin Keybinds
 ----------------------
-
--- nvim-tree
-keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>") -- toggle file explorer
 
 -- telescope
 keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>") -- find files within current working directory, respects .gitignore

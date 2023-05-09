@@ -33,37 +33,21 @@ return packer.startup(function(use)
 
 	use("nvim-lua/plenary.nvim") -- lua functions that many plugins use
 
-	use({ "RRethy/nvim-base16" })
+	use({
+		"blazkowolf/gruber-darker.nvim",
+		config = function()
+			require("gruber-darker").setup({
+				-- DOESN'T WORK FOR SOME REASON
+				italic = {
+					strings = false,
+					comments = false,
+				},
+			})
+		end,
+	})
 
-	-- Automagically changes the current working directory
-	use({
-		"ahmedkhalf/project.nvim",
-		config = function()
-			require("project_nvim").setup({})
-		end,
-	})
-	-- Buffers
-	use({
-		"akinsho/bufferline.nvim",
-		tag = "v3.*",
-		requires = "nvim-tree/nvim-web-devicons",
-		config = function()
-			require("bufferline").setup()
-		end,
-	})
 	-- commenting with gc
 	use("numToStr/Comment.nvim")
-
-	-- file explorer
-	use("nvim-tree/nvim-tree.lua")
-
-	-- Markdown previewer
-	use({
-		"iamcco/markdown-preview.nvim",
-		run = function()
-			vim.fn["mkdp#util#install"]()
-		end,
-	})
 
 	-- vs-code like icons
 	use("nvim-tree/nvim-web-devicons")
@@ -110,10 +94,6 @@ return packer.startup(function(use)
 
 	-- auto closing
 	use("windwp/nvim-autopairs") -- autoclose parens, brackets, quotes, etc...
-	use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" }) -- autoclose tags
-
-	-- git integration
-	use("lewis6991/gitsigns.nvim") -- show line modifications on left hand side
 
 	if packer_bootstrap then
 		require("packer").sync()
