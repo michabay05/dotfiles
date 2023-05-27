@@ -13,6 +13,9 @@ keymap.set("i", "jk", "<ESC>")
 -- clear search highlights
 keymap.set("n", "<leader>h", ":nohl<CR>")
 
+-- File explorer
+keymap.set("n", "<leader>e", ":Lexplore<CR>")
+
 -- Buffer specific navigation
 keymap.set("n", "H", ":bp<CR>")
 keymap.set("n", "L", ":bn<CR>")

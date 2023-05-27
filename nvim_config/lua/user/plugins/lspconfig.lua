@@ -102,3 +102,17 @@ lspconfig["lua_ls"].setup({
 		},
 	},
 })
+
+-- configure typescript server with plugin
+lspconfig.tsserver.setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+	cmd = { "typescript-language-server", "--stdio" },
+	filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
+})
+
+-- configure css server
+lspconfig["cssls"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+})

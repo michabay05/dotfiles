@@ -110,7 +110,7 @@ _G.packer_plugins = {
     url = "https://github.com/rafamadriz/friendly-snippets"
   },
   ["gruber-darker.nvim"] = {
-    config = { "\27LJ\2\ng\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\vitalic\1\0\0\1\0\2\fstrings\1\rcomments\1\nsetup\18gruber-darker\frequire\0" },
+    config = { "\27LJ\2\ng\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\vitalic\1\0\0\1\0\2\rcomments\1\fstrings\1\nsetup\18gruber-darker\frequire\0" },
     loaded = true,
     path = "/home/michabay/.local/share/nvim/site/pack/packer/start/gruber-darker.nvim",
     url = "https://github.com/blazkowolf/gruber-darker.nvim"
@@ -200,7 +200,7 @@ _G.packer_plugins = {
 time([[Defining packer_plugins]], false)
 -- Config for: gruber-darker.nvim
 time([[Config for gruber-darker.nvim]], true)
-try_loadstring("\27LJ\2\ng\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\vitalic\1\0\0\1\0\2\fstrings\1\rcomments\1\nsetup\18gruber-darker\frequire\0", "config", "gruber-darker.nvim")
+try_loadstring("\27LJ\2\ng\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\vitalic\1\0\0\1\0\2\rcomments\1\fstrings\1\nsetup\18gruber-darker\frequire\0", "config", "gruber-darker.nvim")
 time([[Config for gruber-darker.nvim]], false)
 
 _G._packer.inside_compile = false
