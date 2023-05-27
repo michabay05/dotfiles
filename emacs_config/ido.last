@@ -1,0 +1,72 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/home/michabay/Documents/maze/" . "src/")
+ ("/home/michabay/Documents/perftree/perftree-cli/src/" . "bin/")
+ ("/home/michabay/Documents/perftree/perftree-cli/" . "src/")
+ ("/home/michabay/Documents/perftree/perftree/" . "src/")
+ ("/home/michabay/Documents/perftree/" . "perftree-cli/")
+ ("/home/michabay/Documents/chess-engine/" . "src/")
+ ("/home/" . "michabay/")
+ ("/home/michabay/" . "Documents/")
+ ("/home/michabay/Documents/" . "maze/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/home/michabay/Documents/maze/src/"
+ "/home/michabay/.emacs.d/"
+ "/home/michabay/Documents/chess-engine/"
+ "/home/michabay/Documents/chess-engine/src/"
+ "/home/michabay/Documents/perftree/perftree-cli/src/bin/"
+ "/home/michabay/Documents/perftree/perftree/src/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "main.rs"
+ "eval_consts.rs"
+ "eval.rs"
+ "init.el"
+ "README.md"
+ "perft.rs"
+ "move_gen.rs"
+ "perft_test.rs"
+ "engine.rs"
+ "moves.rs"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/home/michabay/Documents/maze/src/" (25714 31777 220035 787000) "eval.rs" "fen.rs" "board.rs" "main.rs" "eval_consts.rs" "magic_consts.rs" "consts.rs" "../" "bb.rs" "move_gen.rs" "perft.rs" "engine.rs" "./" "magics.rs" "attack.rs" "moves.rs")
+
+ ("/home/michabay/.emacs.d/" (25714 21932 907367 478000) "init.el" "auto-save-list/" "init.el~" "../" "smex-items" "elpa/" "ido.last~" ".mc-lists.el" "./" "ido.last")
+
+ ("/home/michabay/" (25714 21935 975446 50000) "open-gimp" ".vscode/" ".zcompdump" "ap_prac/" ".zcompdump-michabay-inspironn5110-5.8.1" ".fonts/" "snap/" ".yarn/" "tree-sitter/" ".wget-hsts" ".npm/" "build/" "alacritty/" "dotfiles/" ".dotnet/" ".zshenv" ".vim/" ".lesshst" ".java/" ".Xauthority" "Public/" "../" "Templates/" "Videos/" ".python_history" ".jmacsrc" "test/" ".zcompdump-michabay-inspironn5110-5.8.1.zwc" "go/" ".rustup/" "neovim/" ".oh-my-zsh/" ".shell.pre-oh-my-zsh" ".bash_logout" ".Xdefaults" ".cache/" "automata-ts/" "raylib/" ".profile" ".bash_history" ".pki/" ".zshrc" ".bashrc" ".gitconfig" "Desktop/" ".icons/" ".emacs.d/" ".gnome/" "./" ".yarnrc" "Documents/" ".ssh/" ".vimrc" ".config/" ".cargo/" ".local/" "Music/" "helix/" ".xsession-errors" "Downloads/" ".nvm/" ".sudo_as_admin_successful" ".viminfo" ".var/" "Pictures/" ".zsh_history" ".gnupg/")
+
+ ("/home/michabay/Documents/maze/" (25714 21154 27708 682000) "Cargo.lock" "src/" "README.md" "target/" "../" "Cargo.toml" "LICENSE" ".git/" "./" ".gitignore")
+
+ ("/home/michabay/Documents/" (25714 21601 754923 738000) "chess-gui/" "Stockfish/" "automaton/" "png-probe/" "zip-probe/" "aoc-2022/" "perftree/" "hangman/" "../" "wordle-solver/" "find-clone/" "tetris-rs/" "tetris-c/" "maze/" "./" "cegui/" "Disaster/" "arena_src/" "smart_rockets/" "go-hangman/")
+
+ ("/home/michabay/Documents/chess-engine/" (25714 21154 27708 682000) "Cargo.lock" "src/" "README.md" "target/" "../" "Cargo.toml" "LICENSE" ".git/" "./" ".gitignore")
+
+ ("/home/michabay/Documents/chess-engine/src/" (25714 21025 220557 970000) "fen.rs" "board.rs" "main.rs" "magic_consts.rs" "consts.rs" "../" "bb.rs" "move_gen.rs" "perft.rs" "engine.rs" "./" "magics.rs" "attack.rs" "moves.rs")
+
+ ("/home/michabay/Documents/perftree/perftree/src/" (25714 4068 360108 978000) "../" "./" "lib.rs")
+
+ ("/home/michabay/Documents/perftree/perftree-cli/src/bin/" (25714 1011 282005 239000) "../" "./" "perftree.rs")
+
+ ("/home/michabay/Documents/perftree/perftree-cli/src/" (25713 64660 229132 65000) "bin/" "../" "./")
+
+ ("/home/michabay/Documents/perftree/perftree-cli/" (25713 64660 229132 65000) "src/" "../" "Cargo.toml" "./")
+
+ ("/home/michabay/Documents/perftree/perftree/" (25713 64660 233132 167000) "src/" "../" "Cargo.toml" "./")
+
+ ("/home/michabay/Documents/perftree/" (25714 697 805855 618000) "perftree-cli/" "Cargo.lock" "README.md" "perftree/" "target/" "../" "Cargo.toml" "LICENSE" ".git/" "perft_test" "./" ".gitignore")
+
+ ("/home/" (25562 61432 680779 675000) "michabay/" "../" "./")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t

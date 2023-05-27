@@ -1,0 +1,32 @@
+
+;; ----- smex-history -----
+(
+ quit-window
+ package-install
+ package-refresh-contents
+ buffer-menu
+ comment-dwim
+ comment-box
+ load-file
+)
+
+;; ----- smex-data -----
+(
+ (text-mode . 1)
+ (eldoc-mode . 1)
+ (font-lock-mode . 3)
+ (package-install . 5)
+ (load-file . 17)
+ (dired . 1)
+ (display-line-numbers-mode . 1)
+ (global-display-line-numbers-mode . 1)
+ (save-buffer . 2)
+ (mc/mark-next-like-this . 1)
+ (mc/keyboard-quit . 1)
+ (shell-command . 1)
+ (comment-box . 1)
+ (comment-dwim . 2)
+ (buffer-menu . 1)
+ (package-refresh-contents . 1)
+ (quit-window . 1)
+)

@@ -1,0 +1,42 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/home/michabay/Documents/chess-engine/" . "src/")
+ ("/home/" . "michabay/")
+ ("/home/michabay/" . ".emacs.d/")
+ ("/home/michabay/Documents/" . "chess-engine/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/home/michabay/.emacs.d/"
+ "/home/michabay/Documents/chess-engine/src/"
+ "/home/michabay/Documents/chess-engine/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "init.el"
+ "engine.rs"
+ "magics.rs"
+ "Cargo.lock"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/home/michabay/.emacs.d/" (25706 6973 155124 337000) "init.el" "auto-save-list/" "init.el~" "../" "smex-items" "elpa/" "ido.last~" "./" "ido.last")
+
+ ("/home/michabay/" (25706 6762 101611 796000) "open-gimp" ".vscode/" ".zcompdump" "ap_prac/" ".zcompdump-michabay-inspironn5110-5.8.1" ".fonts/" "snap/" ".yarn/" "tree-sitter/" ".wget-hsts" ".npm/" "build/" "alacritty/" "dotfiles/" ".dotnet/" ".zshenv" ".vim/" ".lesshst" ".java/" ".Xauthority" "Public/" "../" "Templates/" "Videos/" ".python_history" ".jmacsrc" "test/" ".zcompdump-michabay-inspironn5110-5.8.1.zwc" "go/" ".rustup/" "neovim/" ".oh-my-zsh/" ".shell.pre-oh-my-zsh" ".bash_logout" ".Xdefaults" ".cache/" "automata-ts/" "raylib/" ".profile" ".bash_history" ".pki/" ".zshrc" ".bashrc" ".gitconfig" "Desktop/" ".icons/" ".emacs.d/" ".gnome/" "./" ".yarnrc" "Documents/" ".ssh/" ".vimrc" ".config/" ".cargo/" ".local/" "Music/" "helix/" ".xsession-errors" "Downloads/" ".nvm/" ".sudo_as_admin_successful" ".viminfo" ".var/" "Pictures/" ".zsh_history" ".gnupg/")
+
+ ("/home/michabay/Documents/chess-engine/src/" (25706 3222 813865 883000) "board.rs" "main.rs" "magic_consts.rs" "consts.rs" "../" "bb.rs" "engine.rs" "./" "magics.rs" "attack.rs")
+
+ ("/home/michabay/Documents/chess-engine/" (25705 38018 837362 465000) "Cargo.lock" "src/" "target/" "../" "Cargo.toml" ".git/" "./" ".gitignore")
+
+ ("/home/" (25562 61432 680779 675000) "michabay/" "../" "./")
+
+ ("/home/michabay/Documents/" (25704 55194 245208 748000) "chess-gui/" "Stockfish/" "automaton/" "png-probe/" "zip-probe/" "aoc-2022/" "hangman/" "../" "wordle-solver/" "find-clone/" "tetris-rs/" "chess-engine/" "tetris-c/" "./" "cegui/" "Disaster/" "arena_src/" "smart_rockets/" "go-hangman/")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t
