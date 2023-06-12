@@ -20,6 +20,13 @@ update_i3_config() {
     echo "Updated i3 config..."
 }
 
+update_i3status_config() {
+    rm -rf ./i3status_config
+    cp -r ~/.config/i3status . 
+    mv i3status i3status_config
+    echo "Updated i3status config..."
+}
+
 update_emacs_config() {
     rm -rf ./emacs_config
     cp -r ~/.emacs.d . 
@@ -31,11 +38,12 @@ all() {
     update_vim_config
     update_nvim_config
     update_i3_config
+    update_i3status_config
     update_emacs_config
 }
 
 if [[ -z "$1" ]]; then
-    echo "Please input type of argument: [ all, vim, nvim, i3, emacs ]"
+    echo "Please input type of argument: [ all, vim, nvim, i3, i3status, emacs ]"
     exit 1
 fi
 
@@ -47,6 +55,8 @@ elif [[ "$1" == "nvim" ]]; then
     update_nvim_config
 elif [[ "$1" == "i3" ]]; then
     update_i3_config
+elif [[ "$1" == "i3status" ]]; then
+    update_i3status_config
 elif [[ "$1" == "emacs" ]]; then
     update_emacs_config
 fi
