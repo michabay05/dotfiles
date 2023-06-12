@@ -1,10 +1,18 @@
+;; Set tab width to 4 on all buffers
+(setq-default c-basic-offset 4)
+(setq-default tab-width 4)
+(setq-default indent-tabs-mode nil)
+(setq-default make-backup-files nil)
+
 ;; Set up package.el to work with MELPA
 ;; Initialize package sources
 (require 'package)
 
-(setq package-archives '(("melpa" . "https://melpa.org/packages/")
-                         ("org" . "https://orgmode.org/elpa/")
-                         ("elpa" . "https://elpa.gnu.org/packages/")))
+;; (setq package-archives '(("melpa" . "https://melpa.org/packages/")
+;;                          ("org" . "https://orgmode.org/elpa/")
+;;                          ("elpa" . "https://elpa.gnu.org/packages/")))
+
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 
 (package-initialize)
 (unless package-archive-contents
@@ -29,7 +37,7 @@
 (global-display-line-numbers-mode) 
 
 ;; Block cursor in insert mode
-;; (setq evil-insert-state-cursor 'box)
+(setq evil-insert-state-cursor 'box)
 
 ;; Themes
 (use-package gruber-darker-theme)
@@ -59,22 +67,20 @@
 (ido-mode 1)
 (ido-everywhere 1)
 
-;; Company
-(require 'company)
-
-;; (use-package 'tree-sitter)
-;; (use-package 'tree-sitter-langs)
+(use-package tree-sitter)
+(use-package tree-sitter-langs)
 (require 'tree-sitter)
-(require 'tree-sitter-langs)
-
-;; (require 'treesit)
 (global-tree-sitter-mode)
-(setq font-lock-maximum-decoration t)
 
-;; Rust mode
+;; Syntax highlighting
 (use-package rust-mode
   :ensure t)
 (require 'rust-mode)
+
+(use-package zig-mode
+  :ensure t)
+(require 'zig-mode)
+(zig-format-on-save-mode -1)
 
 ;; Smex: smart M-x
 (use-package smex
@@ -86,6 +92,11 @@
   :ensure t)
 (require 'multiple-cursors)
 
+;; Company mode
+(use-package company)
+(require 'company)
+(global-company-mode)
+
 ;; Smooth scrolling
 (setq scroll-step            1
       scroll-conservatively  10000
@@ -94,11 +105,15 @@
 ;; ======================== KEYMAPS ========================
 ;; Leader key remap
 (evil-set-leader nil (kbd "SPC"))
+
 ;; Escape key remap
-(define-key evil-insert-state-map "jk" 'evil-normal-state)
+;; This remap is disabled because I can't type the letter 'j' in insert mode.
+;; (define-key evil-insert-state-map "jk" 'evil-normal-state)
+
 ;; Comments related
 (define-key evil-normal-state-map "gc" 'comment-dwim)
 (define-key evil-normal-state-map "gb" 'comment-region)
+
 ;; Buffer related
 (define-key evil-normal-state-map (kbd "<leader>l") 'evil-next-buffer)
 (define-key evil-normal-state-map (kbd "<leader>h") 'evil-prev-buffer)
@@ -114,7 +129,7 @@
  ;; If there is more than one, they won't work right.
  '(ispell-dictionary nil)
  '(package-selected-packages
-   '(company markdown-mode multiple-cursors rust-mode smex tree-sitter-langs evil cmake-mode)))
+   '(helm magit company markdown-mode multiple-cursors rust-mode smex tree-sitter-langs evil cmake-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

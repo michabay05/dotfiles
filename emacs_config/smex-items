@@ -1,13 +1,13 @@
 
 ;; ----- smex-history -----
 (
- quit-window
+ whitespace-mode
+ helm-find
  package-install
- package-refresh-contents
- buffer-menu
- comment-dwim
- comment-box
- load-file
+ find-file-at-point
+ imenu
+ magit
+ magit-init
 )
 
 ;; ----- smex-data -----
@@ -15,8 +15,8 @@
  (text-mode . 1)
  (eldoc-mode . 1)
  (font-lock-mode . 3)
- (package-install . 5)
- (load-file . 17)
+ (package-install . 15)
+ (load-file . 19)
  (dired . 1)
  (display-line-numbers-mode . 1)
  (global-display-line-numbers-mode . 1)
@@ -27,6 +27,17 @@
  (comment-box . 1)
  (comment-dwim . 2)
  (buffer-menu . 1)
- (package-refresh-contents . 1)
+ (package-refresh-contents . 4)
  (quit-window . 1)
+ (tree-sitter-mode . 1)
+ (tree-sitter-hl-mode . 1)
+ (compile . 1)
+ (ibuffer . 1)
+ (package-autoremove . 1)
+ (magit . 2)
+ (magit-init . 1)
+ (imenu . 2)
+ (find-file-at-point . 1)
+ (helm-find . 1)
+ (whitespace-mode . 2)
 )

@@ -79,101 +79,16 @@ _G.packer_plugins = {
     path = "/home/michabay/.local/share/nvim/site/pack/packer/start/Comment.nvim",
     url = "https://github.com/numToStr/Comment.nvim"
   },
-  LuaSnip = {
-    loaded = true,
-    path = "/home/michabay/.local/share/nvim/site/pack/packer/start/LuaSnip",
-    url = "https://github.com/L3MON4D3/LuaSnip"
-  },
-  ["cmp-buffer"] = {
-    loaded = true,
-    path = "/home/michabay/.local/share/nvim/site/pack/packer/start/cmp-buffer",
-    url = "https://github.com/hrsh7th/cmp-buffer"
-  },
-  ["cmp-nvim-lsp"] = {
-    loaded = true,
-    path = "/home/michabay/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
-    url = "https://github.com/hrsh7th/cmp-nvim-lsp"
-  },
-  ["cmp-path"] = {
-    loaded = true,
-    path = "/home/michabay/.local/share/nvim/site/pack/packer/start/cmp-path",
-    url = "https://github.com/hrsh7th/cmp-path"
-  },
-  cmp_luasnip = {
-    loaded = true,
-    path = "/home/michabay/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
-    url = "https://github.com/saadparwaiz1/cmp_luasnip"
-  },
-  ["friendly-snippets"] = {
-    loaded = true,
-    path = "/home/michabay/.local/share/nvim/site/pack/packer/start/friendly-snippets",
-    url = "https://github.com/rafamadriz/friendly-snippets"
-  },
   ["gruber-darker.nvim"] = {
-    config = { "\27LJ\2\ng\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\vitalic\1\0\0\1\0\2\rcomments\1\fstrings\1\nsetup\18gruber-darker\frequire\0" },
+    config = { "\27LJ\2\nš\1\0\0\4\0\t\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\0016\0\6\0009\0\a\0'\2\b\0B\0\2\1K\0\1\0\31colorscheme  gruber-darker\bcmd\bvim\vitalic\1\0\0\1\0\2\fstrings\1\rcomments\1\nsetup\18gruber-darker\frequire\0" },
     loaded = true,
     path = "/home/michabay/.local/share/nvim/site/pack/packer/start/gruber-darker.nvim",
     url = "https://github.com/blazkowolf/gruber-darker.nvim"
-  },
-  ["lspkind.nvim"] = {
-    loaded = true,
-    path = "/home/michabay/.local/share/nvim/site/pack/packer/start/lspkind.nvim",
-    url = "https://github.com/onsails/lspkind.nvim"
-  },
-  ["lspsaga.nvim"] = {
-    loaded = true,
-    path = "/home/michabay/.local/share/nvim/site/pack/packer/start/lspsaga.nvim",
-    url = "https://github.com/glepnir/lspsaga.nvim"
-  },
-  ["lualine.nvim"] = {
-    loaded = true,
-    path = "/home/michabay/.local/share/nvim/site/pack/packer/start/lualine.nvim",
-    url = "https://github.com/nvim-lualine/lualine.nvim"
-  },
-  ["mason-lspconfig.nvim"] = {
-    loaded = true,
-    path = "/home/michabay/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
-    url = "https://github.com/williamboman/mason-lspconfig.nvim"
-  },
-  ["mason-null-ls.nvim"] = {
-    loaded = true,
-    path = "/home/michabay/.local/share/nvim/site/pack/packer/start/mason-null-ls.nvim",
-    url = "https://github.com/jayp0521/mason-null-ls.nvim"
-  },
-  ["mason.nvim"] = {
-    loaded = true,
-    path = "/home/michabay/.local/share/nvim/site/pack/packer/start/mason.nvim",
-    url = "https://github.com/williamboman/mason.nvim"
-  },
-  ["null-ls.nvim"] = {
-    loaded = true,
-    path = "/home/michabay/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
-    url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
-  },
-  ["nvim-autopairs"] = {
-    loaded = true,
-    path = "/home/michabay/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
-    url = "https://github.com/windwp/nvim-autopairs"
-  },
-  ["nvim-cmp"] = {
-    loaded = true,
-    path = "/home/michabay/.local/share/nvim/site/pack/packer/start/nvim-cmp",
-    url = "https://github.com/hrsh7th/nvim-cmp"
-  },
-  ["nvim-lspconfig"] = {
-    loaded = true,
-    path = "/home/michabay/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
-    url = "https://github.com/neovim/nvim-lspconfig"
   },
   ["nvim-treesitter"] = {
     loaded = true,
     path = "/home/michabay/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
-  },
-  ["nvim-web-devicons"] = {
-    loaded = true,
-    path = "/home/michabay/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
-    url = "https://github.com/nvim-tree/nvim-web-devicons"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -200,7 +115,7 @@ _G.packer_plugins = {
 time([[Defining packer_plugins]], false)
 -- Config for: gruber-darker.nvim
 time([[Config for gruber-darker.nvim]], true)
-try_loadstring("\27LJ\2\ng\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\vitalic\1\0\0\1\0\2\rcomments\1\fstrings\1\nsetup\18gruber-darker\frequire\0", "config", "gruber-darker.nvim")
+try_loadstring("\27LJ\2\nš\1\0\0\4\0\t\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\0016\0\6\0009\0\a\0'\2\b\0B\0\2\1K\0\1\0\31colorscheme  gruber-darker\bcmd\bvim\vitalic\1\0\0\1\0\2\fstrings\1\rcomments\1\nsetup\18gruber-darker\frequire\0", "config", "gruber-darker.nvim")
 time([[Config for gruber-darker.nvim]], false)
 
 _G._packer.inside_compile = false
