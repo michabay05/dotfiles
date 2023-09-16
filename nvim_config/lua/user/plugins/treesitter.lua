@@ -16,11 +16,8 @@ treesitter.setup({
 	autotag = { enable = true },
 	-- ensure these language parsers are installed
 	ensure_installed = {
-		"yaml",
-		"bash",
 		"lua",
-		"rust",
-		"markdown",
+		"c"
 	},
 	-- auto install above language parsers
 	rainbow = {

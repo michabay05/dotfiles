@@ -42,3 +42,9 @@ opt.splitright = true -- split vertical window to the right
 opt.splitbelow = true -- split horizontal window to the bottom
 
 -- opt.iskeyword:append("-") -- consider string-string as whole word
+vim.cmd([[ 
+augroup masm_ft
+au!
+autocmd BufNewFile,BufRead *.masm   set filetype=masm
+augroup END
+]])

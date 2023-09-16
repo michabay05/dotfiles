@@ -26,29 +26,28 @@ if not status then
 	return
 end
 
+vim.cmd [[packadd packer.nvim]]
+
 -- add list of plugins to install
 return packer.startup(function(use)
 	-- packer can manage itself
 	use("wbthomason/packer.nvim")
 
-	use({
-		"blazkowolf/gruber-darker.nvim",
-		config = function()
-			require("gruber-darker").setup{
-				italic = {
-					strings = false,
-					comments = false,
-				},
-			}
-            vim.cmd("colorscheme  gruber-darker")
-		end,
-	})
+    -- colorscheme
+    use({
+        "cpea2506/one_monokai.nvim",
+        config = function()
+            require("one_monokai").setup({
+                italics = false,
+            })
+            -- vim.cmd("colo one_monokai")
+        end
+    })
 
 	-- commenting with gc
 	use("numToStr/Comment.nvim")
 
 	-- fuzzy finding w/ telescope
-	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- dependency for better sorting performance
 	use({ "nvim-telescope/telescope.nvim", branch = "0.1.x", requires = { {'nvim-lua/plenary.nvim'} } }) -- fuzzy finder
 
 	-- treesitter configuration
@@ -59,6 +58,22 @@ return packer.startup(function(use)
 			ts_update()
 		end,
 	})
+
+    -- lualine config
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'nvim-tree/nvim-web-devicons', opt = true },
+        config = function()
+                --[[
+            --require("lualine").setup({})
+                --]]
+            require("lualine").setup({
+                options = {
+                    icons_enabled = false,
+                }
+            })
+        end,
+    }
 
 	if packer_bootstrap then
 		require("packer").sync()
