@@ -8,17 +8,12 @@ end
 treesitter.setup({
 	-- enable syntax highlighting
 	highlight = {
-		enable = true,
+		enable = false,
 	},
 	-- enable indentation
 	indent = { enable = true },
 	-- enable autotagging (w/ nvim-ts-autotag plugin)
 	autotag = { enable = true },
-	-- ensure these language parsers are installed
-	ensure_installed = {
-		"lua",
-		"c"
-	},
 	-- auto install above language parsers
 	rainbow = {
 		enable = true,
@@ -28,5 +23,4 @@ treesitter.setup({
 		-- colors = {}, -- table of hex strings
 		-- termcolors = {} -- table of colour name strings
 	},
-	auto_install = true,
 })

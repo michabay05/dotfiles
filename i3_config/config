@@ -48,6 +48,9 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec alacritty
 
+# take a screen shot
+bindsym $mod+z exec screengrab
+
 # kill focused window
 bindsym $mod+x kill
 

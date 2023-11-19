@@ -34,15 +34,18 @@ return packer.startup(function(use)
 	use("wbthomason/packer.nvim")
 
     -- colorscheme
-    use({
-        "cpea2506/one_monokai.nvim",
+    use {
+        "blazkowolf/gruber-darker.nvim",
         config = function()
-            require("one_monokai").setup({
-                italics = false,
-            })
-            -- vim.cmd("colo one_monokai")
-        end
-    })
+            require("gruber-darker").setup {
+                italic = {
+                    strings = false,
+                    comments = false,
+                },
+            }
+            vim.cmd("colo gruber-darker")
+        end,
+    }
 
 	-- commenting with gc
 	use("numToStr/Comment.nvim")
@@ -64,14 +67,11 @@ return packer.startup(function(use)
         'nvim-lualine/lualine.nvim',
         requires = { 'nvim-tree/nvim-web-devicons', opt = true },
         config = function()
-                --[[
-            --require("lualine").setup({})
-                --]]
-            require("lualine").setup({
+            require("lualine").setup {
                 options = {
                     icons_enabled = false,
                 }
-            })
+            }
         end,
     }
 

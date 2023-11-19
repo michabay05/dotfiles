@@ -27,19 +27,11 @@ update_i3status_config() {
     echo "Updated i3status config..."
 }
 
-update_emacs_config() {
-    rm -rf ./emacs_config
-    cp -r ~/.emacs.d . 
-    mv .emacs.d emacs_config
-    echo "Updated emacs config..."
-}
-
 all() {
     update_vim_config
     update_nvim_config
     update_i3_config
     update_i3status_config
-    update_emacs_config
 }
 
 if [[ -z "$1" ]]; then
@@ -57,8 +49,6 @@ elif [[ "$1" == "i3" ]]; then
     update_i3_config
 elif [[ "$1" == "i3status" ]]; then
     update_i3status_config
-elif [[ "$1" == "emacs" ]]; then
-    update_emacs_config
 fi
 
 echo "Finished updating..."
