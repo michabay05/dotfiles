@@ -1,6 +1,6 @@
 # My config files
 
-These are my configs that I use everytime. The neovim config is heavily inspired by josean neovim video, which is linked below.
+These are my configs that I use everyday. The neovim config is heavily inspired by josean neovim video, which is linked below.
 
 ## Resources
 - [Josean's Youtube Video](https://www.youtube.com/watch?v=vdn_pKJUda8&t=829s&ab_channel=JoseanMartinez)
