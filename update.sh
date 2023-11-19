@@ -13,6 +13,13 @@ update_nvim_config() {
     echo "Updated nvim config..."
 }
 
+update_alacritty_config() {
+    rm -rf ./alacritty_config
+    cp -r ~/.config/alacritty . 
+    mv alacritty alacritty_config
+    echo "Updated alacritty config..."
+}
+
 update_i3_config() {
     rm -rf ./i3_config
     cp -r ~/.config/i3 . 
@@ -35,20 +42,22 @@ all() {
 }
 
 if [[ -z "$1" ]]; then
-    echo "Please input type of argument: [ all, vim, nvim, i3, i3status, emacs ]"
+    echo "Please input type of argument: [ all, alacritty, i3, i3status, nvim, vim ]"
     exit 1
 fi
 
 if [[ "$1" == "all" ]]; then
     all
-elif [[ "$1" == "vim" ]]; then
-    update_vim_config
-elif [[ "$1" == "nvim" ]]; then
-    update_nvim_config
+elif [[ "$1" == "alacritty" ]]; then
+    update_alacritty_config
 elif [[ "$1" == "i3" ]]; then
     update_i3_config
 elif [[ "$1" == "i3status" ]]; then
     update_i3status_config
+elif [[ "$1" == "nvim" ]]; then
+    update_nvim_config
+elif [[ "$1" == "vim" ]]; then
+    update_vim_config
 fi
 
 echo "Finished updating..."
