@@ -35,7 +35,7 @@ return packer.startup(function(use)
 
     -- colorscheme
     use {
-        "blazkowolf/gruber-darker.nvim",
+        "michabay05/gruber-darker.nvim",
         config = function()
             require("gruber-darker").setup {
                 italic = {
@@ -51,7 +51,7 @@ return packer.startup(function(use)
 	use("numToStr/Comment.nvim")
 
 	-- fuzzy finding w/ telescope
-	use({ "nvim-telescope/telescope.nvim", branch = "0.1.x", requires = { {'nvim-lua/plenary.nvim'} } }) -- fuzzy finder
+	use({ "nvim-telescope/telescope.nvim", branch = "0.1.x", requires = { {"nvim-lua/plenary.nvim"} } }) -- fuzzy finder
 
 	-- treesitter configuration
 	use({
@@ -64,16 +64,31 @@ return packer.startup(function(use)
 
     -- lualine config
     use {
-        'nvim-lualine/lualine.nvim',
-        requires = { 'nvim-tree/nvim-web-devicons', opt = true },
+        "nvim-lualine/lualine.nvim",
+        requires = { "nvim-tree/nvim-web-devicons", opt = true },
         config = function()
             require("lualine").setup {
                 options = {
                     icons_enabled = false,
+                },
+                sections = {
+                    lualine_c = {
+                        {
+                            "filename",
+                            -- 0: Just the filename
+                            -- 1: Relative path
+                            -- 2: Absolute path
+                            -- 3: Absolute path, with tilde as the home directory
+                            -- 4: Filename and parent dir, with tilde as the home directory
+                            path = 1,                
+                        }
+                    },
                 }
             }
         end,
     }
+
+    use("tikhomirov/vim-glsl")
 
 	if packer_bootstrap then
 		require("packer").sync()

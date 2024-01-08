@@ -8,7 +8,8 @@ require("user.plugins.treesitter")
 
 -- NEOVIDE CONFIG
 if vim.g.neovide then
-    vim.o.guifont = "Iosevka:h11"
+    vim.o.guifont = "Iosevka:h13"
+    -- vim.o.guifont = "Jetbrains Mono NL:h12"
     vim.g.neovide_scroll_animation_length = 0
     vim.g.neovide_refresh_rate = 60
     vim.g.neovide_confirm_quit = true
@@ -29,4 +30,4 @@ end
 -------------------------------------------------
 
 -- Make the cursor block if not in neovide
-vim.cmd([[ set guicursor= ]])
+-- vim.cmd([[ set guicursor= ]])
