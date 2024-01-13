@@ -1,15 +1,12 @@
 require("user.core.options")
 require("user.core.keymaps")
-require("user.packer")
-require("user.plugins.comment")
-require("user.plugins.treesitter")
+require("user.lazy")
 
 -------------------------------------------------
 
 -- NEOVIDE CONFIG
 if vim.g.neovide then
     vim.o.guifont = "Iosevka:h13"
-    -- vim.o.guifont = "Jetbrains Mono NL:h12"
     vim.g.neovide_scroll_animation_length = 0
     vim.g.neovide_refresh_rate = 60
     vim.g.neovide_confirm_quit = true

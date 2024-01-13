@@ -46,6 +46,8 @@ if [[ -z "$1" ]]; then
     exit 1
 fi
 
+cd ~/dotfiles
+
 if [[ "$1" == "all" ]]; then
     all
 elif [[ "$1" == "alacritty" ]]; then
