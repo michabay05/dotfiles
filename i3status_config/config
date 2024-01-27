@@ -43,11 +43,13 @@ battery all {
 }
 
 tztime local {
-    format = "%a, %Y-%m-%d %H:%M:%S"
+    # format = "%a, %Y-%m-%d %H:%M:%S"
+    format = "%a, %m-%d-%Y %H:%M:%S"
 }
 
 volume master {
     format = "Vol: %volume"
+    format_muted = "Vol: muted(%volume)"
 }
 
 disk "/" {

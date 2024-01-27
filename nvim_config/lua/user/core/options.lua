@@ -16,12 +16,15 @@ opt.wrap = false -- disable line wrapping
 -- search settings
 opt.ignorecase = true -- ignore case when searching
 opt.smartcase = true -- if you include mixed case in your search, assumes you want case-sensitive
+opt.hlsearch = false
+opt.incsearch = true
 
 -- cursor line
 opt.cursorline = true -- highlight the current cursor line
 
 -- appearance
-vim.cmd([[ set scrolloff=8 ]])
+vim.opt.scrolloff = 8
+vim.opt.sidescrolloff = 8
 -- vim.cmd([[ set iskeyword-=_ ]])
 
 -- turn on termguicolors for nightfly colorscheme to work
@@ -47,3 +50,7 @@ au!
 autocmd BufNewFile,BufRead *.masm   set filetype=masm
 augroup END
 ]])
+
+-- Netrw config
+vim.g.netrw_banner = 0        -- gets rid of the annoying banner of Netrw
+vim.g.netrw_liststyle = 3     -- tree style view in Netrw
