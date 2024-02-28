@@ -54,3 +54,11 @@ augroup END
 -- Netrw config
 vim.g.netrw_banner = 0        -- gets rid of the annoying banner of Netrw
 vim.g.netrw_liststyle = 3     -- tree style view in Netrw
+
+-- Needed for the 'obsidian.nvim' plugin
+vim.opt.conceallevel = 1
+
+vim.cmd([[
+let g:pencil#conceallevel = 1     " 0=disable, 1=one char, 2=hide char, 3=hide all (def)
+" let g:pencil#concealcursor = 'c'  " n=normal, v=visual, i=insert, c=command (def)
+]])

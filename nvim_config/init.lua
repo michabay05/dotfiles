@@ -27,4 +27,4 @@ end
 -------------------------------------------------
 
 -- Make the cursor block if not in neovide
-vim.cmd([[ set guicursor= ]])
+-- vim.cmd([[ set guicursor= ]])

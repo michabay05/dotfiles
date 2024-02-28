@@ -14,7 +14,7 @@ remap("i", "jk", "<ESC>")
 remap("n", "<leader>h", ":nohl<CR>")
 
 -- File explorer
-remap("n", "<leader>e", ":Lexplore<CR>")
+-- remap("n", "<leader>e", ":Lexplore<CR>")
 
 -- Buffer specific navigation
 remap("n", "H", ":bp<CR>")
