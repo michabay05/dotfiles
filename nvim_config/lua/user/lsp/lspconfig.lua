@@ -3,7 +3,6 @@ return {
     event = { "BufReadPre", "BufNewFile" },
     dependencies = {
         "hrsh7th/cmp-nvim-lsp",
-        -- { "antosha417/nvim-lsp-file-operations", config = true },
     },
     config = function()
         -- import lspconfig plugin
@@ -55,6 +54,9 @@ return {
             opts.desc = "Show documentation for what is under cursor"
             keymap.set("n", "K", vim.lsp.buf.hover, opts) -- show documentation for what is under cursor
 
+            opts.desc = "Format current buffer"
+            keymap.set("n", "<leader>lf", vim.lsp.buf.format, {async=true})
+
             opts.desc = "Restart LSP"
             keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
         end
@@ -70,8 +72,21 @@ return {
             vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
         end
 
+        -- configure zig lsp server
+        lspconfig["zls"].setup({
+            capabilities = capabilities,
+            on_attach = on_attach,
+        })
+
+
         -- configure c/c++ lsp server
         lspconfig["clangd"].setup({
+            capabilities = capabilities,
+            on_attach = on_attach,
+        })
+
+        -- configure c/c++ lsp server
+        lspconfig["rust_analyzer"].setup({
             capabilities = capabilities,
             on_attach = on_attach,
         })

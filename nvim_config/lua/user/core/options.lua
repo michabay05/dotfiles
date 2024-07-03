@@ -51,6 +51,17 @@ autocmd BufNewFile,BufRead *.masm   set filetype=masm
 augroup END
 ]])
 
+-- set fasm syntax highlighting by default when opening a fasm file
+vim.cmd([[
+autocmd BufNew,BufRead *.fasm set ft=fasm
+autocmd BufNew,BufRead *.inc set ft=fasm
+]])
+
+-- set nasm syntax highlighting by default when opening a nasm file
+vim.cmd([[
+autocmd BufNew,BufRead *.nasm set ft=nasm
+]])
+
 -- Netrw config
 vim.g.netrw_banner = 0        -- gets rid of the annoying banner of Netrw
 vim.g.netrw_liststyle = 3     -- tree style view in Netrw

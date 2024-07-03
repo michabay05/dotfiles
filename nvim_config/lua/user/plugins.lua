@@ -1,6 +1,3 @@
--- Set colorscheme
--- vim.cmd([[colo habamax]])
-
 local function nvim_tree_config()
     -- disable netrw at the very start of your init.lua
     vim.g.loaded_netrw = 1
@@ -16,6 +13,7 @@ local function nvim_tree_config()
         view = { width = 35 },
         renderer = {
             group_empty = true,
+            icons = {},
         },
         filters = {
             dotfiles = false,
@@ -24,50 +22,28 @@ local function nvim_tree_config()
     vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
 end
 
+function SetColorScheme(color)
+    color = color or "habamax"
+    vim.cmd("colo " .. color)
+end
+
+SetColorScheme()
+
+function SetColorSchemeWithNoBg(color)
+    SetColorScheme(color)
+
+    vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+    vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+end
+
+
 return {
-    --[[ {
-        "michabay05/gruber-darker.nvim",
-        priority = 100,
-        config = function()
-            require("gruber-darker").setup {
-                italic = {
-                    strings = false,
-                    comments = false,
-                },
-            }
-            vim.cmd("colo gruber-darker")
-        end,
-    }, ]]
-
     {
-        "ellisonleao/gruvbox.nvim",
-        priority = 1000,
-        lazy = false,
+        "michabay05/gruber-darker.nvim",
         config = function()
-            require("gruvbox").setup({
-                italic = {
-                    strings = false,
-                },
-                contrast = "hard"
-            })
-            vim.cmd("colo gruvbox")
-        end,
+            SetColorScheme("gruber-darker")
+        end
     },
-
-    --[[ {
-        "catppuccin/nvim",
-        name = "catppuccin",
-        priority = 1000,
-        config = function()
-            require("catppuccin").setup({
-                styles = { -- Handles the styles of general hi groups (see `:h highlight-args`):
-                    comments = { }, -- Change the style of comments
-                    conditionals = { },
-                }
-            })
-            vim.cmd("colo catppuccin")
-        end,
-    }, ]]
 
     {
         "numToStr/Comment.nvim",
@@ -78,37 +54,9 @@ return {
     },
 
     {
-        "nvim-lualine/lualine.nvim",
-        config = function()
-            require("lualine").setup {
-                options = {
-                    icons_enabled = true,
-                },
-                sections = {
-                    lualine_c = {
-                        {
-                            "filename",
-                            -- 0: Just the filename
-                            -- 1: Relative path
-                            -- 2: Absolute path
-                            -- 3: Absolute path, with tilde as the home directory
-                            -- 4: Filename and parent dir, with tilde as the home directory
-                            path = 1,
-                        }
-                    },
-                }
-            }
-        end,
-    },
-
-    {
-        "nvim-telescope/telescope.nvim",
-        branch = "0.1.x",
-        dependencies = { "nvim-lua/plenary.nvim", "nvim-tree/nvim-web-devicons" },
-        config = function()
-            local builtin = require('telescope.builtin')
-            vim.keymap.set('n', '<leader>fg', builtin.git_files, {})
-        end,
+        'nvim-telescope/telescope.nvim', tag = '0.1.8',
+         -- or                         , branch = '0.1.x',
+        dependencies = { 'nvim-lua/plenary.nvim' }
     },
 
     {
@@ -150,52 +98,12 @@ return {
         end,
     },
 
-    "tikhomirov/vim-glsl",
-    "tpope/vim-fugitive",
     "preservim/vim-pencil",
 
     -- File explorere
     {
         "nvim-tree/nvim-tree.lua",
         config = nvim_tree_config,
-    },
-
-    -- Lua
-    {
-        "folke/zen-mode.nvim",
-        lazy = true,
-        ft = "markdown",
-    },
-
-    {
-        "epwalsh/obsidian.nvim",
-        version = "*",  -- recommended, use latest release instead of latest commit
-        lazy = true,
-        event = {
-            --   -- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand'.
-            --   -- E.g. "BufReadPre " .. vim.fn.expand "~" .. "/my-vault/**.md"
-            -- "BufReadPre path/to/my-vault/**.md",
-            -- "BufNewFile path/to/my-vault/**.md",
-            "BufReadPre " .. vim.fn.expand "~" .. "/Documents/Obsidian-Notes**.md",
-            "BufNewFile " .. vim.fn.expand "~" .. "/Documents/Obsidian-Notes**.md",
-        },
-        dependencies = {
-            -- Required.
-            "nvim-lua/plenary.nvim",
-
-            -- see below for full list of optional dependencies 👇
-        },
-        config = function()
-            require("obsidian").setup({
-                workspaces = {
-                    {
-                        name = "personal",
-                        path = "~/Documents/Obsidian-Notes",
-                    },
-                },
-                disable_frontmatter = true
-            })
-        end,
     },
 
     -- Completion config
