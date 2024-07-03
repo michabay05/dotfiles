@@ -1,0 +1,64 @@
+[
+    // Global keymaps
+    {
+        "context": "EmptyPane || SharedScreen || vim_operator == none && !VimWaiting && vim_mode != insert",
+        "bindings": {
+            "space f": "file_finder::Toggle",
+            "space e": "workspace::ToggleLeftDock"
+        }
+    },
+    {
+        "context": "Editor && vim_mode == insert && !menu",
+        "bindings": {
+            "j k": ["vim::SwitchMode", "Normal"]
+        }
+    },
+    {
+        "context": "Editor && VimControl && vim_mode == normal && !VimWaiting && !menu",
+        "bindings": {
+            "] d": "editor::GoToDiagnostic",
+            "[ d": "editor::GoToPrevDiagnostic",
+            "g r": "editor::FindAllReferences",
+            "space l a": "editor::ToggleCodeActions",
+            "space l r": "editor::Rename",
+            "space l f": "editor::Format",
+            "space l l": "diagnostics::Deploy",
+            "space t t": "task::Spawn",
+            "space t r": "task::Rerun",
+            "g c c": "editor::ToggleComments",
+            "space f": "file_finder::Toggle",
+            "space e": "workspace::ToggleLeftDock",
+            "space p": "outline::Toggle",
+            "space v": "editor::GoToDefinitionSplit",
+            "space c": "pane::CloseActiveItem"
+        }
+    },
+    {
+        "context": "Editor && vim_mode == insert",
+        "bindings": {
+            "j k": "vim::NormalBefore"
+        }
+    },
+    {
+        "context": "Editor && !VimWaiting && !VimObject",
+        "bindings": {
+            "alt-j": "editor::MoveLineDown",
+            "alt-k": "editor::MoveLineUp"
+        }
+    },
+    {
+        "context": "Terminal && !VimControl",
+        "bindings": {
+            "ctrl-k": "terminal_panel::ToggleFocus"
+        }
+    },
+    {
+        "context": "Dock",
+        "bindings": {
+            "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
+            "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
+            "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
+            "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"]
+        }
+    }
+]
