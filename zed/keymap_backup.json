@@ -16,20 +16,14 @@
     {
         "context": "Editor && vim_mode == insert",
         "bindings": {
-            "j k": "vim::SwitchToNormalMode"
-        }
-    },
-    {
-        "context": "Editor && vim_mode == insert",
-        "bindings": {
-            "j k": "vim::NormalBefore"
+            "j k": ["vim::SwitchMode", "Normal"]
         }
     },
     {
         "context": "Editor && VimControl && vim_mode == normal && !VimWaiting && !menu",
         "bindings": {
             "] d": "editor::GoToDiagnostic",
-            "[ d": "editor::GoToPreviousDiagnostic",
+            "[ d": "editor::GoToPrevDiagnostic",
             "g r": "editor::FindAllReferences",
             "space l a": "editor::ToggleCodeActions",
             "space l r": "editor::Rename",
@@ -43,6 +37,12 @@
             "space p": "outline::Toggle",
             "space v": "editor::GoToDefinitionSplit",
             "space c": "pane::CloseActiveItem"
+        }
+    },
+    {
+        "context": "Editor && vim_mode == insert",
+        "bindings": {
+            "j k": "vim::NormalBefore"
         }
     },
     {
@@ -61,10 +61,10 @@
     {
         "context": "Dock",
         "bindings": {
-            "ctrl-h": "workspace::ActivatePaneLeft",
-            "ctrl-l": "workspace::ActivatePaneRight",
-            "ctrl-k": "workspace::ActivatePaneUp",
-            "ctrl-j": "workspace::ActivatePaneDown"
+            "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
+            "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
+            "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
+            "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"]
         }
     }
 ]

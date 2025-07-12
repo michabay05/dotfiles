@@ -1,5 +1,17 @@
 local opt = vim.opt -- for conciseness
 
+-- Decrease update time
+opt.updatetime = 200
+
+-- Indicator for max col width
+vim.opt.colorcolumn = "100"
+
+-- Decrease mapped sequence wait time
+opt.timeoutlen = 300
+
+-- Don't show the mode, since it's already in the status line
+opt.showmode = false
+
 -- line numbers
 opt.relativenumber = true -- show relative line numbers
 opt.number = true -- shows absolute line number on cursor line (when relative number is on)
@@ -11,7 +23,7 @@ opt.expandtab = true -- expand tab to spaces
 opt.autoindent = true -- copy indent from current line when starting new one
 
 -- line wrapping
-opt.wrap = false -- disable line wrapping
+opt.wrap = true -- disable line wrapping
 
 -- search settings
 opt.ignorecase = true -- ignore case when searching
@@ -19,12 +31,21 @@ opt.smartcase = true -- if you include mixed case in your search, assumes you wa
 opt.hlsearch = false
 opt.incsearch = true
 
+-- Preview substitutions live, as you type!
+opt.inccommand = "split"
+
+-- Enable break indent
+opt.breakindent = true
+
+-- Save undo history
+opt.undofile = true
+
 -- cursor line
-opt.cursorline = true -- highlight the current cursor line
+opt.cursorline = true  -- highlight the current cursor line
 
 -- appearance
-vim.opt.scrolloff = 8
-vim.opt.sidescrolloff = 8
+opt.scrolloff = 5
+opt.sidescrolloff = 5
 -- vim.cmd([[ set iskeyword-=_ ]])
 
 -- turn on termguicolors for nightfly colorscheme to work
@@ -38,6 +59,16 @@ opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or 
 
 -- clipboard
 -- opt.clipboard:append("unnamedplus") -- use system clipboard as default register
+
+-- Sync clipboard between OS and Neovim.
+--  Schedule the setting after `UiEnter` because it can increase startup-time.
+--  Remove this option if you want your OS clipboard to remain independent.
+--  See `:help 'clipboard'`
+-- vim.schedule(function()
+--     vim.opt.clipboard = "unnamedplus"
+-- end)
+vim.opt.clipboard = ""
+
 
 -- split windows
 opt.splitright = true -- split vertical window to the right
@@ -73,3 +104,9 @@ vim.cmd([[
 let g:pencil#conceallevel = 1     " 0=disable, 1=one char, 2=hide char, 3=hide all (def)
 " let g:pencil#concealcursor = 'c'  " n=normal, v=visual, i=insert, c=command (def)
 ]])
+
+-- Sets how neovim will display certain whitespace characters in the editor.
+--  See `:help 'list'`
+--  and `:help 'listchars'`
+vim.opt.list = true
+vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }

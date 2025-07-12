@@ -14,12 +14,17 @@ remap("i", "jk", "<ESC>")
 remap("n", "<leader>h", ":nohl<CR>")
 
 -- File explorer
--- remap("n", "<leader>e", ":Lexplore<CR>")
+-- Question: why is Netrw [RO] readonly???
+-- remap("n", "<leader>e", ":Explore<CR>")
+
+-- Terminal remap
+-- vim.cmd([[tnoremap jk <C-\><C-n>]])
+remap("t", "jk", [[<C-\><C-n>]])
 
 -- Buffer specific navigation
 remap("n", "H", ":bp<CR>")
 remap("n", "L", ":bn<CR>")
-remap("n", "<leader>c", ":bd<CR>")
+remap("n", "<leader>c", ":bd!<CR>")
 
 -- Window Navigation
 remap("n", "<C-h>", "<C-w>h")
@@ -30,6 +35,30 @@ remap("n", "<C-l>", "<C-w>l")
 -- Keep selected text while indenting and outdenting
 remap("v", "<", "<gv")
 remap("v", ">", ">gv")
+
+-- -- Quickfix List remaps
+-- function MakeToQuickfix()
+--     -- Run the :make command
+--     vim.cmd("make")
+--
+--     -- Check if there are any errors in the quickfix list
+--     -- if vim.fn.getqflist({}) ~= nil and not vim.tbl_isempty(vim.fn.getqflist()) then
+--     -- if not vim.tbl_isempty(vim.fn.getqflist()) then
+--     local exit_code = vim.v.shell_error
+--     print("Compilation output: exit " .. exit_code)
+--     if exit_code ~= 0 then
+--         -- Open the quickfix list if there are errors
+--         vim.cmd("copen")
+--     else
+--         -- Close the quickfix list if it's already open
+--         vim.cmd("cclose")
+--     end
+-- end
+-- -- Create a custom command to run MakeToQuickfix
+-- vim.api.nvim_create_user_command("MakeToQuickfix", MakeToQuickfix, {})
+-- remap("n", "<leader>b", ":MakeToQuickfix<CR><CR>", { noremap = true, silent = true })
+-- remap("n", "b[", ":cprev<CR>")
+-- remap("n", "b]", ":cnext<CR>")
 
 -- Move lines up and down
 remap("n", "<A-j>", ":m .+1<CR>==", { silent = true })
@@ -57,16 +86,3 @@ remap("n", "<leader>x", ":quit<CR>")
 ----------------------
 -- Plugin Keybinds
 ----------------------
-
--- telescope
-remap("n", "<leader>ff", "<cmd>Telescope find_files<cr>") -- find files within current working directory, respects .gitignore
-remap("n", "<leader>fs", "<cmd>Telescope live_grep<cr>") -- find string in current working directory as you type
-remap("n", "<leader>fc", "<cmd>Telescope grep_string<cr>") -- find string under cursor in current working directory
-remap("n", "<leader>fb", "<cmd>Telescope buffers<cr>") -- list open buffers in current neovim instance
-remap("n", "<leader>fh", "<cmd>Telescope help_tags<cr>") -- list available help tags
-
--- telescope git commands (not on youtube nvim video)
-remap("n", "<leader>gc", "<cmd>Telescope git_commits<cr>") -- list all git commits (use <cr> to checkout) ["gc" for git commits]
-remap("n", "<leader>gfc", "<cmd>Telescope git_bcommits<cr>") -- list git commits for current file/buffer (use <cr> to checkout) ["gfc" for git file commits]
-remap("n", "<leader>gb", "<cmd>Telescope git_branches<cr>") -- list git branches (use <cr> to checkout) ["gb" for git branch]
-remap("n", "<leader>gs", "<cmd>Telescope git_status<cr>") -- list current changes per file with diff preview ["gs" for git status]

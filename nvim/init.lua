@@ -6,8 +6,6 @@ require("user.lazy")
 
 -- NEOVIDE CONFIG
 if vim.g.neovide then
-    vim.o.guifont = "Zed Mono:h13"
-    -- vim.o.guifont = "Fira Code:h13"
     vim.g.neovide_scroll_animation_length = 0.1
     vim.g.neovide_refresh_rate = 60
     vim.g.neovide_confirm_quit = true
@@ -30,3 +28,21 @@ end
 
 -- Make the cursor block if not in neovide
 -- vim.cmd([[ set guicursor= ]])
+
+-- Additional c3 configs
+vim.filetype.add({
+    extension = {
+        c3 = "c3",
+        c3i = "c3",
+        c3t = "c3",
+    },
+})
+
+local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
+parser_config.c3 = {
+    install_info = {
+        url = "https://github.com/c3lang/tree-sitter-c3",
+        files = { "src/parser.c", "src/scanner.c" },
+        branch = "main",
+    },
+}
