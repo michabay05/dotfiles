@@ -10,12 +10,19 @@ return {
                 }
             }
             -- Enable theme
-            require('onedark').load()
+            require("onedark").load()
         end
     },
 
     "lewis6991/gitsigns.nvim",
     "preservim/vim-pencil",
+
+    {
+        "chomosuke/typst-preview.nvim",
+        ft = "typst", -- or lazy = false
+        version = "1.*",
+        opts = {}, -- lazy.nvim will implicitly calls `setup {}`
+    },
 
     {
         "stevearc/oil.nvim",
@@ -78,32 +85,82 @@ return {
         },
     },
 
+    {
+        "ej-shafran/compile-mode.nvim",
+        version = "^5.0.0",
+        -- you can just use the latest version:
+        -- branch = "latest",
+        -- or the most up-to-date updates:
+        -- branch = "nightly",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            -- if you want to enable coloring of ANSI escape codes in
+            -- compilation output, add:
+            { "m00qek/baleia.nvim", tag = "v1.3.0" },
+        },
+        config = function()
+            vim.g.compile_mode = {
+                -- to add ANSI escape code support, add:
+                baleia_setup = true,
 
-    -- {
-    --     "ej-shafran/compile-mode.nvim",
-    --     tag = "v5.2.0",
-    --     -- you can just use the latest version:
-    --     -- branch = "latest",
-    --     -- or the most up-to-date updates:
-    --     -- branch = "nightly",
-    --     dependencies = {
-    --         "nvim-lua/plenary.nvim",
-    --         -- if you want to enable coloring of ANSI escape codes in
-    --         -- compilation output, add:
-    --         -- { "m00qek/baleia.nvim", tag = "v1.3.0" },
-    --     },
-    --     config = function()
-    --         vim.keymap.set("n", "<leader>bb", ":Compile<CR>")
-    --         vim.keymap.set("n", "<leader>br", ":Recompile<CR>")
-    --         vim.keymap.set("n", "<leader>bn", ":NextError<CR>")
-    --         vim.keymap.set("n", "<leader>bp", ":PrevError<CR>")
-    --         ---@type CompileModeOpts
-    --         vim.g.compile_mode = {
-    --             -- to add ANSI escape code support, add:
-    --             -- baleia_setup = true,
-    --         }
-    --     end
-    -- },
+                -- to make `:Compile` replace special characters (e.g. `%`) in
+                -- the command (and behave more like `:!`), add:
+                -- bang_expansion = true,
+            }
+
+            vim.keymap.set("n", "<leader>G", ":Compile<CR>")
+            vim.keymap.set("n", "<leader>g", ":Recompile<CR>")
+            vim.keymap.set("n", "[d", ":PrevError<CR>")
+            vim.keymap.set("n", "]d", ":NextError<CR>")
+        end
+    },
+
+    {
+        "saghen/blink.cmp",
+        -- optional: provides snippets for the snippet source
+        -- dependencies = { "rafamadriz/friendly-snippets" },
+
+        -- use a release tag to download pre-built binaries
+        version = "1.*",
+        opts = {
+            -- "default" (recommended) for mappings similar to built-in completions (C-y to accept)
+            -- "super-tab" for mappings similar to vscode (tab to accept)
+            -- "enter" for enter to accept
+            -- "none" for no mappings
+            --
+            -- All presets have the following mappings:
+            -- C-space: Open menu or open docs if already open
+            -- C-n/C-p or Up/Down: Select next/previous item
+            -- C-e: Hide menu
+            -- C-k: Toggle signature help (if signature.enabled = true)
+            --
+            -- See :h blink-cmp-config-keymap for defining your own keymap
+            keymap = { preset = "default" },
+
+            appearance = {
+                -- "mono" (default) for "Nerd Font Mono" or "normal" for "Nerd Font"
+                -- Adjusts spacing to ensure icons are aligned
+                nerd_font_variant = "mono"
+            },
+
+            -- (Default) Only show the documentation popup when manually triggered
+            completion = { documentation = { auto_show = false } },
+
+            -- Default list of enabled providers defined so that you can extend it
+            -- elsewhere in your config, without redefining it, due to `opts_extend`
+            sources = {
+                default = { "lsp", "path", "snippets", "buffer" },
+            },
+
+            -- (Default) Rust fuzzy matcher for typo resistance and significantly better performance
+            -- You may use a lua implementation instead by using `implementation = "lua"` or fallback to the lua implementation,
+            -- when the Rust fuzzy matcher is not available, by using `implementation = "prefer_rust"`
+            --
+            -- See the fuzzy documentation for more information
+            fuzzy = { implementation = "prefer_rust_with_warning" }
+        },
+        opts_extend = { "sources.default" }
+    },
 
     { -- Fuzzy Finder (files, lsp, etc)
         "nvim-telescope/telescope.nvim",
@@ -163,7 +220,7 @@ return {
             local builtin = require("telescope.builtin")
             local remap = vim.keymap.set
             remap("n", "<leader>ff", function()
-                builtin.find_files({hidden = true})
+                builtin.find_files({hidden = true, noignore = true})
             end)
             remap("n", "<leader>fk", builtin.keymaps)
             remap("n", "<leader>fs", builtin.grep_string)
@@ -173,6 +230,7 @@ return {
             remap("n", "<leader>fr", builtin.resume)
             remap("n", "<leader>f.", builtin.oldfiles)
             remap("n", "<leader><leader>", builtin.buffers)
+            remap("n", "<leader>fo", builtin.lsp_document_symbols)
 
             -- telescope git commands (not on youtube nvim video)
             remap("n", "<leader>gc", "<cmd>Telescope git_commits<cr>") -- list all git commits (use <cr> to checkout) ["gc" for git commits]
@@ -210,92 +268,26 @@ return {
         build = ":TSUpdate",
         config = function()
             require("nvim-treesitter.configs").setup({
-                ensure_installed = { "c", "cpp", "lua", "zig", "rust", "vimdoc", "luadoc", "vim", "lua", "markdown" },
+                ensure_installed = {
+                    "c", "cpp", "lua", "zig", "rust", "vimdoc",
+                    "luadoc", "vim", "lua", "markdown"
+                },
                 auto_install = false,
+                indent = true,
                 highlight = {
                     enable = true,
                     disable = { "c", "h", "cpp" },
                 },
+                additional_vim_regex_highlighting = false,
+                incremental_selection = {
+                    enable = true,
+                    keymaps = {
+                        node_incremental = "]x",
+                        node_decremental = "[x",
+                    },
+                },
             })
         end,
     },
 
-    {
-        "hrsh7th/nvim-cmp",
-        event = "InsertEnter",
-        dependencies = {
-            "hrsh7th/cmp-buffer", -- source for text in buffer
-            "hrsh7th/cmp-path", -- source for file system paths
-            "hrsh7th/cmp-path",
-            "hrsh7th/cmp-cmdline",
-            "L3MON4D3/LuaSnip", -- snippet engine
-
-            -- "saadparwaiz1/cmp_luasnip", -- for autocompletion
-            -- "rafamadriz/friendly-snippets", -- useful snippets
-            "onsails/lspkind.nvim", -- vs-code like pictograms
-        },
-
-
-        config = function()
-            local cmp = require("cmp")
-            local luasnip = require("luasnip")
-            -- local lspkind = require("lspkind")
-
-            cmp.setup({
-                completion = {
-                    completeopt = "menu,menuone,preview,noselect",
-                },
-
-                snippet = { -- configure how nvim-cmp interacts with snippet engine
-                    expand = function(args)
-                        luasnip.lsp_expand(args.body)
-                    end,
-                },
-
-                mapping = cmp.mapping.preset.insert({
-                    ["<C-k>"] = cmp.mapping.select_prev_item(), -- previous suggestion
-                    ["<C-j>"] = cmp.mapping.select_next_item(), -- next suggestion
-                    ["<C-b>"] = cmp.mapping.scroll_docs(-4),
-                    ["<C-f>"] = cmp.mapping.scroll_docs(4),
-                    ["<C-Space>"] = cmp.mapping.complete(), -- show completion suggestions
-                    ["<C-e>"] = cmp.mapping.abort(), -- close completion window
-                    ["<CR>"] = cmp.mapping.confirm({ select = false }),
-                }),
-
-                sources = cmp.config.sources({
-                    { name = "nvim_lsp" },
-                    { name = "nvim_lsp_signature_help" },
-                    { name = "luasnip" }, -- snippets
-                    { name = "buffer" }, -- text within current buffer
-                    { name = "path" },
-                }),
-
-                -- -- configure lspkind for vs-code like pictograms in completion menu
-                -- formatting = {
-                --     format = lspkind.cmp_format({
-                --         maxwidth = 50,
-                --         ellipsis_char = "...",
-                --     }),
-                -- },
-            })
-
-            -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
-            cmp.setup.cmdline({ "/", "?" }, {
-                mapping = cmp.mapping.preset.cmdline(),
-                sources = {
-                    { name = "buffer" },
-                },
-            })
-
-            -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
-            cmp.setup.cmdline(":", {
-                mapping = cmp.mapping.preset.cmdline(),
-                sources = cmp.config.sources({
-                    { name = "path" },
-                }, {
-                    { name = "cmdline" },
-                }),
-            })
-        end,
-    },
 }

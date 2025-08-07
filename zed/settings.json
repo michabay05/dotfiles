@@ -7,7 +7,7 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-    "theme": "One Dark - Darkened",
+    "theme": "One Dark",
     "agent": {
         "default_profile": "minimal",
         "inline_assistant_model": {
@@ -17,14 +17,12 @@
         "default_model": {
             "provider": "copilot_chat",
             "model": "claude-sonnet-4"
-        },
-        "version": "2"
+        }
     },
 
     "vim_mode": true,
     "vim": {
         "use_system_clipboard": "never",
-        "use_multiline_find": true,
         "use_smartcase_find": true,
         "toggle_relative_line_numbers": true
     },
@@ -45,9 +43,6 @@
         "diagnostics": false,
         "metrics": false
     },
-
-    "auto_signature_help": true,
-    // "show_signature_help_after_edits": true,
 
     "languages": {
         "C++": {
@@ -86,14 +81,6 @@
                 // Use `-p` instead of `--workspace` for cargo check
                 "check": {
                     "workspace": false
-                }
-            }
-        },
-
-        "pyright": {
-            "settings": {
-                "python": {
-                    "pythonPath": ".venv/bin/python"
                 }
             }
         }

@@ -22,8 +22,8 @@ remap("n", "<leader>h", ":nohl<CR>")
 remap("t", "jk", [[<C-\><C-n>]])
 
 -- Buffer specific navigation
-remap("n", "H", ":bp<CR>")
-remap("n", "L", ":bn<CR>")
+remap("n", "gt", ":bn<CR>")
+remap("n", "gT", ":bp<CR>")
 remap("n", "<leader>c", ":bd!<CR>")
 
 -- Window Navigation
@@ -70,19 +70,10 @@ remap("v", "<A-k>", ":m '<-2<CR>gv=gv", { silent = true })
 remap("n", "<A-c>", ":co .<CR>==", { silent = true })
 
 -- Copy and paste from system clipboard
-remap({ "n", "v" }, "<leader>y", [["+y]])
-remap("n", "<leader>p", [["*p]])
-remap("n", "<leader>P", [["*P]])
-remap("v", "<leader>r", [["*p]])
-remap("v", "<leader>R", [["*P]])
+remap({ "n", "v", "x" }, "<leader>y", '"+y')
+remap({ "n", "v", "x" }, "<leader>p", '"+p')
+remap({ "n", "v", "x" }, "<leader>P", '"+P')
 
 -- Creating vertical and horizontal split
 remap("n", "<leader>vs", ":vsplit<CR>")
 remap("n", "<leader>hs", ":split<CR>")
-
--- Closing split screen
-remap("n", "<leader>x", ":quit<CR>")
-
-----------------------
--- Plugin Keybinds
-----------------------

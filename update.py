@@ -8,14 +8,16 @@ def usage(program_name: str) -> None:
     print(f"Usage:")
     print(f"    {program_name} ACTION [OPTIONS]\n")
     print("ACTION:")
-    print("    detect - Provide a list of out-of-date configs (system -> local)")
-    print("    update - Sync out-of-date configs in system and in this directory")
-    print("     setup - Copy configs from this directory to the system\n")
+    print("       detect - Provide a list of out-of-date configs (system -> local)")
+    print("       update - Sync out-of-date configs in system and in this directory")
+    print("        setup - Copy configs from this directory to the system\n")
     print("OPTIONS:")
-    print("    --help - Show list of command line options\n")
+    print("  -h | --help - Show list of command line options\n")
 
 SYS_CONFIG_PATHS: list[tuple[str, str]] = [
     ("~/.config/alacritty", "alacritty"),
+    ("~/.config/kitty", "kitty"),
+    ("~/.config/sway", "sway"),
     ("~/.config/nvim", "nvim"),
     ("~/.config/zed", "zed"),
     ("~/.vimrc", ".vimrc"),
@@ -28,8 +30,6 @@ def detect_out_of_date(act: bool) -> None:
         NOTE: The config found on the user's system is considered the source of truth. This
               means that the files from the system are copied over into this directory.
     """
-    diff_found: bool = False
-
     for sys_path, local_path in SYS_CONFIG_PATHS:
         if sys_path.startswith('~'):
             sys_path = f"{Path.home()}{sys_path[1:]}"
@@ -47,8 +47,6 @@ def detect_out_of_date(act: bool) -> None:
         if sys_is_dir:
             dcmp = filecmp.dircmp(sys_path, local_path)
             diffs: list[tuple[str, str]] = []
-            if not diff_found and len(diffs) > 0:
-                diff_found = True
 
             find_diff_files(dcmp, diffs, act=act)
             for src, dst in diffs:
@@ -59,15 +57,11 @@ def detect_out_of_date(act: bool) -> None:
         else:
             # If sys_path and local_path are not the same, then...
             if not filecmp.cmp(sys_path, local_path):
-                diff_found = True
                 if act:
                     shutil.copyfile(sys_path, local_path)
                     print(f"[INFO]     Updated: {sys_path} -> {local_path}")
                 else:
                     print(f"[INFO]     Diff: {sys_path} -> {local_path}")
-
-    if not diff_found:
-        print("[INFO] No difference found. Config found here is the same as the ones that exist on the system.")
 
 
 def find_diff_files(dcmp: filecmp.dircmp, diffs: list[tuple[str, str]], act: bool) -> None:
@@ -106,11 +100,15 @@ if __name__ == "__main__":
         print("[INFO] Please provide the correct parameters according to the usage above.")
         sys.exit(1)
 
+    action = args[1]
+    if action == "--help" or action == "-h":
+        usage(program_name)
+        sys.exit(0)
+
     curr_dir = os.getcwd()
     print(f"[INFO] Current working directory: '{curr_dir}'")
     print("================")
 
-    action = args[1]
     match action:
         case "detect":
             detect_out_of_date(act=False)

@@ -2,14 +2,13 @@ return {
     "neovim/nvim-lspconfig",
     event = { "BufReadPre", "BufNewFile" },
     dependencies = {
-        "hrsh7th/cmp-nvim-lsp",
+        "saghen/blink.cmp",
     },
     config = function()
         -- import lspconfig plugin
         local lspconfig = require("lspconfig")
 
-        -- import cmp-nvim-lsp plugin
-        local cmp_nvim_lsp = require("cmp_nvim_lsp")
+        local blink_cmp = require("blink.cmp")
 
         local keymap = vim.keymap -- for conciseness
 
@@ -45,20 +44,11 @@ return {
             opts.desc = "See available code actions"
             keymap.set({ "n", "v" }, "<leader>la", vim.lsp.buf.code_action, opts) -- see available code actions, in visual mode will apply to selection
 
-            opts.desc = "Format file"
-            keymap.set("n", "<space>lf", vim.lsp.buf.format, opts)
-
             opts.desc = "Show buffer diagnostics"
-            keymap.set("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", opts) -- show  diagnostics for file
+            keymap.set("n", "gD", "<cmd>Telescope diagnostics bufnr=0<CR>", opts) -- show  diagnostics for file
 
             opts.desc = "Show line diagnostics"
             keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts) -- show diagnostics for line
-
-            opts.desc = "Go to previous diagnostic"
-            keymap.set("n", "[d", vim.diagnostic.jump, opts) -- jump to previous diagnostic in buffer
-
-            opts.desc = "Go to next diagnostic"
-            keymap.set("n", "]d", vim.diagnostic.jump, opts) -- jump to next diagnostic in buffer
 
             opts.desc = "Show documentation for what is under cursor"
             keymap.set("n", "K", function()
@@ -75,17 +65,17 @@ return {
         end
 
         -- used to enable autocompletion (assign to every lsp server config)
-        local capabilities = cmp_nvim_lsp.default_capabilities()
+        local capabilities = blink_cmp.get_lsp_capabilities()
 
         local default_setting_lsps = {
             "ts_ls",
             "zls",
             "clangd",
             "jdtls",
-            "pyright"
+            "pyright",
+            "tinymist"
         }
         for _, lsp in ipairs(default_setting_lsps) do
-            -- configure typescript lsp server
             lspconfig[lsp].setup({
                 capabilities = capabilities,
                 on_attach = on_attach,

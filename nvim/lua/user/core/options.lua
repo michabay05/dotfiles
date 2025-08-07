@@ -28,7 +28,7 @@ opt.wrap = true -- disable line wrapping
 -- search settings
 opt.ignorecase = true -- ignore case when searching
 opt.smartcase = true -- if you include mixed case in your search, assumes you want case-sensitive
-opt.hlsearch = false
+opt.hlsearch = true
 opt.incsearch = true
 
 -- Preview substitutions live, as you type!
@@ -44,7 +44,7 @@ opt.undofile = true
 opt.cursorline = true  -- highlight the current cursor line
 
 -- appearance
-opt.scrolloff = 5
+opt.scrolloff = 3
 opt.sidescrolloff = 5
 -- vim.cmd([[ set iskeyword-=_ ]])
 
