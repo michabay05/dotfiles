@@ -2,6 +2,11 @@
 
 These are my configs that I use everyday. The neovim config is heavily inspired by josean neovim video, which is linked below.
 
+## Other info
+- Font: Iosevka
+- Terminal: kitty
+- Browser: Chromium
+
 ## Resources
 - [Josean's Youtube Video](https://www.youtube.com/watch?v=vdn_pKJUda8&t=829s&ab_channel=JoseanMartinez)
 - [Github Repo of Josean's video](https://github.com/josean-dev/dev-environment-files)

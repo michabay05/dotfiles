@@ -15,11 +15,16 @@ def usage(program_name: str) -> None:
     print("  -h | --help - Show list of command line options\n")
 
 SYS_CONFIG_PATHS: list[tuple[str, str]] = [
+    # ======== Folders ========
     ("~/.config/alacritty", "alacritty"),
+    ("~/.config/hypr", "hypr"),
+    ("~/.config/i3status", "i3status"),
     ("~/.config/kitty", "kitty"),
     ("~/.config/sway", "sway"),
+    ("~/.config/waybar", "waybar"),
     ("~/.config/nvim", "nvim"),
     ("~/.config/zed", "zed"),
+    # ======== Files ========
     ("~/.vimrc", ".vimrc"),
     ("~/.tmux.conf", ".tmux.conf"),
 ]
@@ -39,6 +44,8 @@ def detect_out_of_date(act: bool) -> None:
         local_is_dir: bool = os.path.isdir(local_path)
 
         if sys_is_dir ^ local_is_dir:
+            print(f"[ERROR] System: '{sys_path}'")
+            print(f"[ERROR] Local:  '{local_path}'")
             print(
                 f"[ERROR] Both sys_path and local_path should of the same type: either a file or directory"
             )

@@ -8,7 +8,7 @@
 
 general {
     colors = true
-        interval = 5
+    interval = 5
 }
 
 order += "cpu_temperature 0"
@@ -44,7 +44,8 @@ battery all {
 
 tztime local {
     # format = "%a, %Y-%m-%d %H:%M:%S"
-    format = "%a, %m-%d-%Y %H:%M:%S"
+    format = "%a, %b-%d-%Y %H:%M:%S"
+    format = "%a, %b-%d %H:%M:%S"
 }
 
 volume master {
