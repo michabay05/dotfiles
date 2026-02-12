@@ -1,0 +1,6 @@
+# jneovim-bin = "/home/mabayneh/opt/mybins/nvim"
+
+[font]
+normal = ["Jetbrains Mono"]
+size = 14
+

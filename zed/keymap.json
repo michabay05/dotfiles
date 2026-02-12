@@ -1,0 +1,72 @@
+[
+    {
+        "context": "EmptyPane || SharedScreen || vim_operator == none && !VimWaiting && vim_mode != insert",
+        "bindings": {
+            "space f": "file_finder::Toggle",
+            "space e": "workspace::ToggleLeftDock"
+        }
+    },
+    {
+        "context": "AgentPanel || GitPanel || ProjectPanel || CollabPanel || OutlinePanel || ChatPanel || VimControl || EmptyPane || SharedScreen || MarkdownPreview || KeyContextView || DebugPanel",
+        "bindings": {
+            "ctrl-h": "workspace::ActivatePaneLeft",
+            "ctrl-l": "workspace::ActivatePaneRight",
+            "ctrl-k": "workspace::ActivatePaneUp",
+            "ctrl-j": "workspace::ActivatePaneDown"
+        }
+    },
+    {
+        "context": "Editor && vim_mode == insert && !VimWaiting",
+        "bindings": {
+            "j k": "vim::NormalBefore"
+        }
+    },
+    {
+        "context": "Editor && vim_mode == insert",
+        "bindings": {
+            "j k": "vim::SwitchToNormalMode"
+        }
+    },
+    {
+        "context": "Editor && vim_mode == insert",
+        "bindings": {
+            "j k": "vim::NormalBefore"
+        }
+    },
+    {
+        "context": "Editor && VimControl && vim_mode == normal && !VimWaiting && !menu",
+        "bindings": {
+            "] d": "editor::GoToDiagnostic",
+            "[ d": "editor::GoToPreviousDiagnostic",
+            "g r": "editor::FindAllReferences",
+            "space l a": "editor::ToggleCodeActions",
+            "space l r": "editor::Rename",
+            "space l f": "editor::Format",
+            "space l l": "diagnostics::Deploy",
+            "space t t": "task::Spawn",
+            "space t r": "task::Rerun",
+            "g c c": "editor::ToggleComments",
+            "space f": "file_finder::Toggle",
+            "space e": "workspace::ToggleLeftDock",
+            "space p": "outline::Toggle",
+            "space v": "editor::GoToDefinitionSplit",
+            "space c": "pane::CloseActiveItem",
+            "ctrl-g": "terminal_panel::ToggleFocus",
+            "ctrl-q": "terminal_panel::Toggle"
+        }
+    },
+    {
+        "context": "Terminal",
+        "bindings": {
+            "ctrl-g": "terminal_panel::ToggleFocus",
+            "ctrl-q": "terminal_panel::Toggle"
+        }
+    },
+    {
+        "context": "Editor && !VimWaiting && !VimObject",
+        "bindings": {
+            "alt-j": "editor::MoveLineDown",
+            "alt-k": "editor::MoveLineUp"
+        }
+    },
+]
