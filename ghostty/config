@@ -1,0 +1,11 @@
+font-family = Jetbrains Mono
+font-size = 13
+theme = Dimmed Monokai
+window-theme = ghostty
+auto-update = off
+window-decoration = client
+adjust-cursor-thickness = 50%
+cursor-color = white
+adjust-cell-height = 10%
+mouse-scroll-multiplier = 1
+shell-integration-features = ssh-terminfo,ssh-env

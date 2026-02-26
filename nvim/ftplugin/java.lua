@@ -1,2 +1,1 @@
-vim.treesitter.start()
-
+vim.cmd([[ compiler javac ]])

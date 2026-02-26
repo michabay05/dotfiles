@@ -20,7 +20,7 @@ vim.o.inccommand = "split"
 vim.o.breakindent = true
 vim.o.undofile = true
 vim.o.cursorline = true  -- highlight the current cursor line
-vim.o.scrolloff = 3
+vim.o.scrolloff = 5
 vim.o.sidescrolloff = 5
 vim.o.termguicolors = true
 vim.o.background = "dark" -- colorschemes that can be light or dark will be made dark
@@ -31,8 +31,6 @@ vim.o.splitright = true -- split vertical window to the right
 vim.o.splitbelow = true -- split horizontal window to the bottom
 vim.opt.list = true
 vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
-
-vim.cmd([[ set guicursor= ]])
 
 ----------------------------------------
       -- KEY BINDINGS SECTION --
@@ -83,17 +81,14 @@ vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
     {
-        "ellisonleao/gruvbox.nvim",
+        -- "deparr/tairiki.nvim",
+        "UtkarshVerma/molokai.nvim",
         config = function()
-            italic = {
-                strings = false,
-            }
-            require("gruvbox").load()
+            -- vim.cmd([[ colo tairiki ]])
+            vim.cmd([[ colo molokai ]])
         end,
     },
 
-    "lewis6991/gitsigns.nvim",
-    "preservim/vim-pencil",
     {
         "tpope/vim-dispatch",
         config = function()
@@ -104,7 +99,23 @@ local plugins = {
     {
         "nvim-treesitter/nvim-treesitter",
         lazy = false,
-        build = ":TSUpdate"
+        build = ":TSUpdate",
+        config = function()
+            vim.api.nvim_create_autocmd("FileType", {
+                pattern = { "*" },
+                callback = function()
+                    local filetype = vim.bo.filetype
+                    if filetype and filetype ~= "" then
+                        local success = pcall(function()
+                            vim.treesitter.start()
+                        end)
+                        if not success then
+                            return
+                        end
+                    end
+                end,
+            })
+        end
     },
 
     {
@@ -159,20 +170,34 @@ local plugins = {
     },
 
     {
-        'chomosuke/typst-preview.nvim',
-        lazy = false, -- or ft = 'typst'
-        version = '1.*',
+        "chomosuke/typst-preview.nvim",
+        lazy = false, -- or ft = "typst"
+        version = "1.*",
         opts = {}, -- lazy.nvim will implicitly calls `setup {}`
     },
 
-
-
     {
-        "numToStr/Comment.nvim",
+        "nvim-mini/mini.nvim",
+        version = "*",
         config = function()
-            require("Comment").setup()
+            local hipatterns = require("mini.hipatterns")
+            hipatterns.setup({
+                highlighters = {
+                    -- Highlight standalone "FIXME", "HACK", "TODO", "NOTE"
+                    fixme = { pattern = "%f[%w]()FIXME()%f[%W]", group = "MiniHipatternsFixme" },
+                    hack  = { pattern = "%f[%w]()HACK()%f[%W]",  group = "MiniHipatternsHack"  },
+                    todo  = { pattern = "%f[%w]()TODO()%f[%W]",  group = "MiniHipatternsTodo"  },
+                    note  = { pattern = "%f[%w]()NOTE()%f[%W]",  group = "MiniHipatternsNote"  },
+
+                    -- Highlight hex color strings (`#rrggbb`) using that color
+                    hex_color = hipatterns.gen_highlighter.hex_color(),
+                },
+            })
+
+            require("mini.comment").setup()
+            require("mini.sessions").setup()
+            require('mini.align').setup()
         end,
-        lazy = false,
     },
 
     {
@@ -183,27 +208,28 @@ local plugins = {
             -- your configuration comes here
             -- or leave it empty to use the default settings
             -- refer to the configuration section below
-            animate = { enabled = false },
+
+            -- animate = { enabled = true },
             bigfile = { enabled = true },
-            dashboard = { enabled = false },
-            explorer = { enabled = false },
+            -- dashboard = { enabled = true },
+            -- explorer = { enabled = false },
             indent = { enabled = true },
             input = { enabled = true },
-            picker = { enabled = true },
+            -- picker = { enabled = false },
             quickfile = { enabled = true },
             scope = { enabled = true },
-            scroll = { enabled = false },
+            -- scroll = { enabled = false },
             statuscolumn = { enabled = true },
             win = { enabled = true },
         },
     },
 
     {
-        'nvim-telescope/telescope.nvim', version = '*',
+        "nvim-telescope/telescope.nvim", version = "*",
         dependencies = {
-            'nvim-lua/plenary.nvim',
+            "nvim-lua/plenary.nvim",
             -- optional but recommended
-            { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+            { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
         },
 
         extensions = {
@@ -223,6 +249,14 @@ local plugins = {
                 -- Available modes: symbols, lines, both
                 show_columns = "both",
             },
+
+            fzf = {
+                fuzzy = true,                    -- false will only do exact matching
+                override_generic_sorter = true,  -- override the generic sorter
+                override_file_sorter = true,     -- override the file sorter
+                case_mode = "smart_case",        -- or "ignore_case" or "respect_case"
+                -- the default case_mode is "smart_case"
+            }
         },
 
         config = function()
@@ -244,6 +278,7 @@ local plugins = {
                     },
                 },
             })
+            require('telescope').load_extension("fzf")
             require("telescope").load_extension("aerial")
             remap("n", "<leader>o", ":Telescope aerial<CR>")
 
@@ -294,8 +329,8 @@ if vim.g.neovide then
     vim.g.neovide_scroll_animation_length = 0.1
     vim.g.neovide_refresh_rate = 60
     vim.g.neovide_confirm_quit = true
-    vim.g.neovide_cursor_animation_length = 0.005
-    vim.opt.linespace = 0
+    vim.g.neovide_cursor_animation_length = 0.001
+    vim.opt.linespace = 1
 
     vim.g.neovide_scale_factor = 1.0
     local scale_ratio = 1.05
