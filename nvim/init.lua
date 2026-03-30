@@ -44,7 +44,7 @@ remap("n", "<leader>h", ":nohl<CR>")
 remap("t", "jk", [[<C-\><C-n>]])
 remap("n", "gt", ":bn<CR>")
 remap("n", "gT", ":bp<CR>")
-remap("n", "<leader>c", ":bd!<CR>")
+remap("n", "<leader>d", ":bd!<CR>")
 remap("n", "<C-h>", "<C-w>h")
 remap("n", "<C-j>", "<C-w>j")
 remap("n", "<C-k>", "<C-w>k")
@@ -81,10 +81,8 @@ vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
     {
-        -- "deparr/tairiki.nvim",
         "UtkarshVerma/molokai.nvim",
         config = function()
-            -- vim.cmd([[ colo tairiki ]])
             vim.cmd([[ colo molokai ]])
         end,
     },
@@ -124,10 +122,14 @@ local plugins = {
             require("aerial").setup({
                 backends = { "treesitter", "lsp", "markdown", "asciidoc", "man" },
                 filter_kind = {
-                    "Function",
+                    "Class",
                     "Struct",
-                    "Constant",
+                    "Constructor",
                     "Enum",
+                    "Function",
+                    "Interface",
+                    "Constant",
+                    "Method",
                 },
             })
         end,
@@ -196,7 +198,10 @@ local plugins = {
 
             require("mini.comment").setup()
             require("mini.sessions").setup()
-            require('mini.align').setup()
+            require("mini.align").setup()
+            local buf_rm = require("mini.bufremove")
+            buf_rm.setup()
+            remap("n", "<leader>c", buf_rm.delete)
         end,
     },
 
@@ -280,7 +285,7 @@ local plugins = {
             })
             require('telescope').load_extension("fzf")
             require("telescope").load_extension("aerial")
-            remap("n", "<leader>o", ":Telescope aerial<CR>")
+            remap("n", "<leader>o", ":Telescope aerial<CR>", {silent = true})
 
             local builtin = require("telescope.builtin")
             remap("n", "<leader>f", function()
