@@ -1,0 +1,5 @@
+neovim-bin = "/home/mabayneh/opt/mybins/nvim"
+
+[font]
+normal = ["JetBrainsMono Nerd Font"]
+size = 14
