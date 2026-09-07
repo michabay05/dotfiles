@@ -43,6 +43,9 @@ local function get_search_dirs()
 end
 
 remap("n", "<leader>f", function()
+    builtin.find_files({ hidden = true, noignore = true })
+end, { desc = "Find files in current working directory" })
+remap("n", "<C-p>", function()
     builtin.find_files({
         search_dirs = get_search_dirs(),
         hidden = true, noignore = true

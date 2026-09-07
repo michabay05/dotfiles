@@ -23,10 +23,10 @@ remap("n", "gT", ":bp<CR>")
 remap("n", "<leader>c", ":bd!<CR>")
 
 -- Window Navigation
-remap("n", "<C-h>", "<C-w>h")
-remap("n", "<C-j>", "<C-w>j")
-remap("n", "<C-k>", "<C-w>k")
-remap("n", "<C-l>", "<C-w>l")
+-- remap("n", "<C-h>", "<C-w>h")
+-- remap("n", "<C-j>", "<C-w>j")
+-- remap("n", "<C-k>", "<C-w>k")
+-- remap("n", "<C-l>", "<C-w>l")
 
 -- Keep selected text while indenting and outdenting
 remap("v", "<", "<gv")

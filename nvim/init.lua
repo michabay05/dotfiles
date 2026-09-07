@@ -10,10 +10,13 @@ vim.pack.add({
     -- NOTE: Go into the install dir and run 'make'
     "https://github.com/nvim-telescope/telescope-fzf-native.nvim",
     "https://github.com/nvim-telescope/telescope.nvim",
+
+    "https://github.com/jake-stewart/multicursor.nvim",
 })
 
 require("oil-config")
 require("telescope-config")
+require("mc-config")
 
 vim.g.vimtex_view_general_viewer = "okular"
 vim.g.vimtex_view_general_options = [[--unique file:@pdf\#src:@line@tex]]
