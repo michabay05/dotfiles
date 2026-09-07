@@ -1,0 +1,12 @@
+font-family = JetbrainsMono Nerd Font
+font-size = 13
+# theme = Dimmed Monokai
+window-theme = dark
+auto-update = off
+adjust-cursor-thickness = 50%
+cursor-color = white
+adjust-cell-height = 10%
+mouse-scroll-multiplier = 1
+
+window-padding-x = 0
+window-padding-y = 0
