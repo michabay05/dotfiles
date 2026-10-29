@@ -1,0 +1,21 @@
+# AUTO-GENERATED FILE (mabay)
+fastfetch
+fd
+fzf
+gf2
+glslangValidator
+lazygit
+lgt
+love
+nvim
+odin
+processing
+rdb
+rg
+tatr
+texlab
+tinymist
+tinymist-viewer
+tree-sitter
+typst
+zoxide
