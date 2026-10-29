@@ -1,0 +1,15 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"LSP",
+		"LSP-pyright",
+		"Odin",
+		"OpenGL Shading Language (GLSL)",
+		"Package Control",
+		"Terminus",
+	],
+}

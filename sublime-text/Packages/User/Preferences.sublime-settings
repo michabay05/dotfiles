@@ -1,0 +1,12 @@
+{
+	"font_face": "JetBrainsMono Nerd Font Mono",
+	"font_size": 13,
+	"theme": "Default Dark.sublime-theme",
+	"color_scheme": "Monokai.sublime-color-scheme",
+	"ignored_packages":
+	[
+		"Vintage",
+	],
+	"index_files": true,
+	"rulers": [[100, "dotted", 1]],
+}
