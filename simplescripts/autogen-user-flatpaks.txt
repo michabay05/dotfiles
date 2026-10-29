@@ -1,0 +1,11 @@
+# AUTO-GENERATED FILE (mabay)
+Zen	app.zen_browser.zen	1.23.2b	stable	system
+Rnote	com.github.flxzt.rnote	0.14.2	stable	system
+Foliate	com.github.johnfactotum.Foliate	3.3.0	stable	system
+Flatseal	com.github.tchx84.Flatseal	2.4.1	stable	system
+OBS Studio	com.obsproject.Studio	33.0.0	stable	system
+Slack	com.slack.Slack	4.52.178	stable	system
+Super Productivity	com.super_productivity.SuperProductivity	v19.3.1	stable	system
+Obsidian	md.obsidian.Obsidian	1.14.4	stable	system
+ONLYOFFICE Desktop Editors	org.onlyoffice.desktopeditors	10.0.0	stable	system
+Zotero	org.zotero.Zotero	10.0.6	stable	system

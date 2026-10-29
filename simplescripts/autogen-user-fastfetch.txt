@@ -1,0 +1,29 @@
+# AUTO-GENERATED FILE (mabay)
+           `.:/ossyyyysso/:.                mabayneh@napoleon
+        .:oyyyyyyyyyyyyyyyyyyo:`            -----------------
+      -oyyyyyyyodMMyyyyyyyysyyyyo-          OS: Kubuntu 26.04.1 LTS (Resolute Raccoon) x86_64
+    -syyyyyyyyyydMMyoyyyydmMMyyyyys-        Host: 83KS (IdeaPad 5 2-in-1 16IAL10)
+   oyyysdMysyyyydMMMMMMMMMMMMMyyyyyyyo      Kernel: Linux 7.0.0-38-generic
+ `oyyyydMMMMysyysoooooodMMMMyyyyyyyyyo`     Uptime: 7 days, 11 hours, 41 mins
+ oyyyyyydMMMMyyyyyyyyyyyysdMMysssssyyyo     Packages: 3361 (dpkg), 24 (flatpak), 12 (snap)
+-yyyyyyyydMysyyyyyyyyyyyyyysdMMMMMysyyy-    Shell: bash 5.3.9
+oyyyysoodMyyyyyyyyyyyyyyyyyyydMMMMysyyyo    Display (MSI G273): 1920x1080 in 27", 120 Hz [External]
+yyysdMMMMMyyyyyyyyyyyyyyyyyyysosyyyyyyyy    DE: KDE Plasma 6.6.6
+yyysdMMMMMyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy    WM: KWin (Wayland)
+oyyyyysosdyyyyyyyyyyyyyyyyyyydMMMMysyyyo    WM Theme: Breeze
+-yyyyyyyydMysyyyyyyyyyyyyyysdMMMMMysyyy-    Theme: Breeze (Dark) [Qt], Breeze-Dark [GTK2], Breeze [GTK3]
+ oyyyyyydMMMysyyyyyyyyyyysdMMyoyyyoyyyo     Icons: breeze-dark [Qt], breeze-dark [GTK2/3/4]
+ `oyyyydMMMysyyyoooooodMMMMyoyyyyyyyyo      Font: Noto Sans (10pt) [Qt], Noto Sans (10pt) [GTK2/3/4]
+   oyyysyyoyyyysdMMMMMMMMMMMyyyyyyyyo       Cursor: WhiteSur (24px)
+    -syyyyyyyyydMMMysyyydMMMysyyyys-        Terminal: pre-commit
+      -oyyyyyyydMMyyyyyyysosyyyyo-          CPU: Intel(R) Core(TM) Ultra 7 255U (4+8+2) @ 5.20 GHz
+        ./oyyyyyyyyyyyyyyyyyyo/.            GPU: Intel Graphics @ 2.10 GHz [Integrated]
+           `.:/oosyyyysso/:.`               Memory: 12.76 GiB / 30.84 GiB (41%)
+                                            Swap: 12.00 KiB / 512.00 MiB (0%)
+                                            Disk (/): 178.41 GiB / 937.53 GiB (19%) - ext4
+                                            Local IP (wlp3s0): 192.168.4.50/22
+                                            Battery (L23C3PE1): 80% [AC Connected]
+                                            Locale: en_US.UTF-8
+                                            
+                                            [40m   [41m   [42m   [43m   [44m   [45m   [46m   [47m   [m
+                                            [100m   [101m   [102m   [103m   [104m   [105m   [106m   [107m   [m
