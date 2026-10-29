@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=MATLab
+TryExec=/home/mabayneh/.local/matlab.app/bin/matlab
+StartupNotify=true
+Exec=/home/mabayneh/.local/matlab.app/bin/matlab %U
+Icon=/home/mabayneh/.local/matlab.app/bin/glnxa64/cef_resources/matlab_icon.png

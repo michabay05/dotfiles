@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=Digital
+Comment=Easy-to-use digital logic designer and circuit simulator 
+Exec=/home/mabayneh/opt/Digital-v0.31/Digital.sh
+Icon=/home/mabayneh/opt/Digital-v0.31/icon.svg
+Categories=Education;Electronics;
+MimeType=text/x-digital;
+Terminal=false
+Keywords=simulator;digital;circuits;
+

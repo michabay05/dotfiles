@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Version=0.30.0
+Name=Friendly Editor
+Comment=Lightweight, efficient text editor
+Exec=/home/mabayneh/opt/fred/fred-linux
+Icon=/home/mabayneh/opt/fred/fred-icon.png
+Keywords=fred
+Terminal=false
+Categories=Utility;Development;
