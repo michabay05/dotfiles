@@ -65,72 +65,57 @@ line_rulers = [100]
 
 [[editor.highlights]]
 color = 0xc586c0ff
-tags = ['keyword.directive',
-'keyword.directive.define',
-'keyword.directive.include',
-'macro.function',
-'macro.define',
-'macro.definition']
-
-[[editor.highlights]]
-color = 0xc586c0ff
-tags = ['keyword.alloc',
+tags = ['keyword',
 'keyword.return',
 'keyword.repeat',
+'keyword.import',
+'character.special',
 'keyword.conditional',
-'keyword.conditional.ternary',
-'keyword.exception',
-'keyword.coroutine',
-'keyword.coroutine.return']
+'keyword.directive',
+'markup.heading.1']
 
 [[editor.highlights]]
 color = 0x569cd6ff
-tags = ['keyword',
+tags = ['keyword.function',
+'keyword.type',
 'keyword.operator',
-'keyword.storage',
-'boolean',
-'function.builtin',
-'type.builtin',
-'type.qualifier',
-'tag']
-
-[[editor.highlights]]
-color = 0x569cd6ff
-tags = ['variable.builtin']
+'keyword.coroutine',
+'keyword.exception',
+'variable.builtin',
+'markup.heading.2']
 
 [[editor.highlights]]
 color = 0xdcdcaaff
-tags = ['function']
-
-[[editor.highlights]]
-color = 0xdcdcaaff
-tags = ['function.call']
-
-[[editor.highlights]]
-color = 0xdcdcaaff
-tags = ['function.method',
-'function.method.call']
+tags = ['function.builtin',
+'markup.heading.3']
 
 [[editor.highlights]]
 color = 0x4ec9b0ff
 tags = ['type',
-'property']
+'type.builtin',
+'variable.parameter',
+'module']
 
 [[editor.highlights]]
 color = 0x817d82ff
-tags = ['attribute']
+tags = ['string.documentation',
+'attribute',
+'variable.member',
+'module.builtin',
+'keyword.directive']
 
 [[editor.highlights]]
 color = 0xb5cea8ff
 tags = ['constant',
 'constant.builtin',
-'number']
+'number',
+'number.float',
+'boolean']
 
 [[editor.highlights]]
 color = 0xce9178ff
 tags = ['string',
-'string.escape',
-'character']
+'markup.raw.block']
 
 [[editor.highlights]]
 color = 0x6a9955ff
@@ -138,15 +123,39 @@ tags = ['comment']
 
 [[editor.highlights]]
 color = 0xe3811cff
-tags = ['operator']
-
-[[editor.highlights]]
-color = 0x4ec9b0ff
-tags = ['scope.name']
+tags = ['operator',
+'markup.list']
 
 [[editor.highlights]]
 color = 0xf44747ff
-tags = ['embedded']
+tags = ['string.escape',
+'attribute.builtin',
+'markup.quote']
+
+[[editor.lang]]
+lang = "Markdown"
+c_func = "tree_sitter_markdown"
+query_src = "/home/mabayneh/opt/fred/external-queries/markdown-highlights.scm"
+sources = ["/home/mabayneh/opt/fred/tree-sitter-markdown/tree-sitter-markdown/src/parser.c",
+"/home/mabayneh/opt/fred/tree-sitter-markdown/tree-sitter-markdown/src/scanner.c"]
+extensions = [".md"]
+
+[[editor.lang]]
+lang = "Python"
+c_func = "tree_sitter_python"
+query_src = "/home/mabayneh/opt/fred/external-queries/python-highlights.scm"
+sources = ["/home/mabayneh/opt/fred/tree-sitter-python/src/parser.c",
+"/home/mabayneh/opt/fred/tree-sitter-python/src/scanner.c"]
+extensions = [".py",
+".pyi"]
+
+[[editor.lang]]
+lang = "TOML"
+c_func = "tree_sitter_toml"
+query_src = "/home/mabayneh/opt/fred/tree-sitter-toml/queries/highlights.scm"
+sources = ["/home/mabayneh/opt/fred/tree-sitter-toml/src/parser.c",
+"/home/mabayneh/opt/fred/tree-sitter-toml/src/scanner.c"]
+extensions = [".toml"]
 
 [[editor.lang]]
 lang = "Typst"
@@ -197,7 +206,7 @@ EB_color = 0xffffffff
 [file_explorer.state]
 font_size = 14
 noisy_dir_root = false
-rooted_filters = ""
+rooted_filters = "/.git/"
 
 [feed.colors]
 info = 0xd4d4d4ff

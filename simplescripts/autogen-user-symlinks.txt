@@ -1,4 +1,5 @@
 # AUTO-GENERATED FILE (mabay)
+entr
 fastfetch
 fd
 fzf
@@ -7,10 +8,12 @@ glslangValidator
 lazygit
 lgt
 love
+matlab
+mex
 nvim
 odin
 processing
-rdb
+raddbg
 rg
 tatr
 texlab

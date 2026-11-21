@@ -420,23 +420,23 @@ mods = ["Shift"]
 
 [[binding]]
 name = "ED_CyclePanelForward"
-key = "PgDn"
-mods = ["Ctrl"]
+key = "I"
+mods = ["Alt"]
 
 [[binding]]
 name = "ED_CyclePanelBack"
-key = "PgUp"
-mods = ["Ctrl"]
+key = "U"
+mods = ["Alt"]
 
 [[binding]]
 name = "ED_CycleOnlyPanelForward"
-key = "PgDn"
-mods = ["Ctrl","Shift"]
+key = "L"
+mods = ["Alt"]
 
 [[binding]]
 name = "ED_CycleOnlyPanelBack"
-key = "PgUp"
-mods = ["Ctrl","Shift"]
+key = "H"
+mods = ["Alt"]
 
 [[binding]]
 name = "ED_NavNextError"

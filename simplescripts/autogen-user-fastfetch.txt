@@ -3,9 +3,9 @@
         .:oyyyyyyyyyyyyyyyyyyo:`            -----------------
       -oyyyyyyyodMMyyyyyyyysyyyyo-          OS: Kubuntu 26.04.1 LTS (Resolute Raccoon) x86_64
     -syyyyyyyyyydMMyoyyyydmMMyyyyys-        Host: 83KS (IdeaPad 5 2-in-1 16IAL10)
-   oyyysdMysyyyydMMMMMMMMMMMMMyyyyyyyo      Kernel: Linux 7.0.0-38-generic
- `oyyyydMMMMysyysoooooodMMMMyyyyyyyyyo`     Uptime: 7 days, 11 hours, 41 mins
- oyyyyyydMMMMyyyyyyyyyyyysdMMysssssyyyo     Packages: 3361 (dpkg), 24 (flatpak), 12 (snap)
+   oyyysdMysyyyydMMMMMMMMMMMMMyyyyyyyo      Kernel: Linux 7.0.0-43-generic
+ `oyyyydMMMMysyysoooooodMMMMyyyyyyyyyo`     Uptime: 1 day, 19 hours, 3 mins
+ oyyyyyydMMMMyyyyyyyyyyyysdMMysssssyyyo     Packages: 3391 (dpkg), 27 (flatpak), 13 (snap)
 -yyyyyyyydMysyyyyyyyyyyyyyysdMMMMMysyyy-    Shell: bash 5.3.9
 oyyyysoodMyyyyyyyyyyyyyyyyyyydMMMMysyyyo    Display (MSI G273): 1920x1080 in 27", 120 Hz [External]
 yyysdMMMMMyyyyyyyyyyyyyyyyyyysosyyyyyyyy    DE: KDE Plasma 6.6.6
@@ -18,11 +18,11 @@ oyyyyysosdyyyyyyyyyyyyyyyyyyydMMMMysyyyo    WM Theme: Breeze
     -syyyyyyyyydMMMysyyydMMMysyyyys-        Terminal: pre-commit
       -oyyyyyyydMMyyyyyyysosyyyyo-          CPU: Intel(R) Core(TM) Ultra 7 255U (4+8+2) @ 5.20 GHz
         ./oyyyyyyyyyyyyyyyyyyo/.            GPU: Intel Graphics @ 2.10 GHz [Integrated]
-           `.:/oosyyyysso/:.`               Memory: 12.76 GiB / 30.84 GiB (41%)
-                                            Swap: 12.00 KiB / 512.00 MiB (0%)
-                                            Disk (/): 178.41 GiB / 937.53 GiB (19%) - ext4
+           `.:/oosyyyysso/:.`               Memory: 7.45 GiB / 30.84 GiB (24%)
+                                            Swap: 0 B / 512.00 MiB (0%)
+                                            Disk (/): 182.20 GiB / 937.53 GiB (19%) - ext4
                                             Local IP (wlp3s0): 192.168.4.50/22
-                                            Battery (L23C3PE1): 80% [AC Connected]
+                                            Battery (L23C3PE1): 98% [AC Connected]
                                             Locale: en_US.UTF-8
                                             
                                             [40m   [41m   [42m   [43m   [44m   [45m   [46m   [47m   [m

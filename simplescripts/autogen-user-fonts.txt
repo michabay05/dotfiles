@@ -1,4 +1,16 @@
 # AUTO-GENERATED FILE (mabay)
+CascadiaCode
+CascadiaCode
+CascadiaCode-Italic
+CodeNewRomanNerdFont-Bold.otf
+CodeNewRomanNerdFont-Italic.otf
+CodeNewRomanNerdFontMono-Bold.otf
+CodeNewRomanNerdFontMono-Italic.otf
+CodeNewRomanNerdFontMono-Regular.otf
+CodeNewRomanNerdFontPropo-Bold.otf
+CodeNewRomanNerdFontPropo-Italic.otf
+CodeNewRomanNerdFontPropo-Regular.otf
+CodeNewRomanNerdFont-Regular.otf
 DejaVuSansMNerdFont
 DejaVuSansMNerdFontMono
 DejaVuSansMNerdFontPropo
